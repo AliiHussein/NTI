@@ -1,10 +1,11 @@
+
 #include <stdio.h>
 
 void main(){
-    void_ptr_test();
+    short int i = 20;
+    char c = 97;
 
-
+    printf("%d %d %d\n", sizeof(i),sizeof(c),sizeof(c+i));
 }
-
 
 

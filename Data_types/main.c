@@ -1,14 +1,23 @@
 #include <stdio.h>
 
+/*
 struct student{
     char name[20];
     int id;
     float degree;
 };
+*/
+
+typedef struct{
+    char name[20];
+    int id;
+    float degree;
+
+}student;
 
 void main(){
-    struct student st1 = {"Ali", 20, 5.5};
-    struct student st2;
+    student st1 = {"Ali", 20, 5.5};
+    student st2;
 
     gets(st2.name);
     scanf("%d", &st2.id);
