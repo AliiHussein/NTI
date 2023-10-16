@@ -57,7 +57,6 @@ int* sort_array_by_value(int * arr, int size){
 
 void string_name_pass(void){
 
-
     int trials = 3;
 
     for(int i = 0; i < 3; i++){
@@ -79,11 +78,31 @@ void string_name_pass(void){
             trials--;
             printf("Wrong cred\n");
             printf("You have %d trials left\n", trials);
-            //strcpy(name, " ");
-
         }
-
     }
+}
 
+void void_ptr_test(void){
+    void *ptr;
+    int * ptr2;
 
+    int num1 = 5;
+    char ch1 = 'A';
+    float num2 = 5.5;
+    double num3 = 6.3;
+
+    ptr = &num1;
+    printf("num1 = %d\n", *((int*)ptr));
+
+    ptr = &ch1;
+    printf("ch1 = %c\n", *((char*)ptr));
+
+    ptr = &num2;
+    printf("num2 = %.1f\n", *((float*)ptr));
+
+    ptr = &num3;
+    printf("num3 = %.1lf\n", *((double*)ptr));
+
+    printf("size of ptr is %d\n", sizeof(ptr));
+    printf("size of ptr2 is %d\n", sizeof(ptr2));
 }
