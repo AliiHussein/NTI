@@ -1,37 +1,16 @@
-#include <stdio.h>
-
-/*
-struct student{
-    char name[20];
-    int id;
-    float degree;
-};
-*/
-
-typedef struct{
-    char name[20];
-    int id;
-    float degree;
-
-}student;
+#include "std_h.h"
 
 void main(){
-    student st1;
-    student * p1 = &st1;
+    Employee e1;
+    Employee e2;
+    Employee e3;
 
-    student st2;
-    student * p2 = &st2;
+    Employee *ptr[3] = {&e1, &e2, &e3}; // array of pointers
 
-    strcpy(p1->name,"Ali");
-    p1->id = 20;
-    p1->degree = 5.5;
 
-    gets(p2->name);
-    scanf("%d", &(p2->id));
-    scanf("%f", &(p2->degree));
+    scan_employee(ptr, 3);
 
-    printf("St1: Name= %s, id= %d, degree= %f\n", p1->name, p1->id, p1->degree);
-    printf("St2: Name= %s, id= %d, degree= %f\n", p2->name, p2->id, p2->degree);
+    print_employee(ptr, 3);
 
 
 }
