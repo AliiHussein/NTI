@@ -6,15 +6,16 @@
 void playWithPointers(void);
 void playWithArray(void);
 void calculator(void);
+Std_ReturnType login_system(void);
 
 int main()
 {
     /* Variables */
     int options = 0;
 
-    // if(!login_system()){
-    //     return 0;
-    // }
+    if(!login_system()){
+        return 0;
+    }
 
     while(options != 4){
         printf("\nChoose a number from the List\n");
@@ -36,6 +37,8 @@ int main()
             }
 
     }
+
+    printf("\n THANK YOU!");
 
     return 0;
 }
