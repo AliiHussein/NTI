@@ -120,7 +120,22 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bit_math.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DIO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DIO.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="std_macros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="std_types.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

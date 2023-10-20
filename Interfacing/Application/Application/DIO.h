@@ -9,6 +9,8 @@
 #ifndef DIO_H_
 #define DIO_H_
 
+#include "std_macros.h"
+
 #define PORTA *((volatile uint8 *)0x3B)
 #define PORTB *((volatile uint8 *)0x38)
 #define PORTC *((volatile uint8 *)0x35)
@@ -24,7 +26,16 @@
 #define PINC *((volatile uint8 *)0x33)
 #define PIND *((volatile uint8 *)0x30)
 
+typedef enum {portA = 'A', portB, portC, portD}PORTS;
+typedef enum {INPUT = 0, OUTPUT}DIR;
+typedef enum {LOW = 0, HIGH}LOGIC;
 
+void DIO_voidSetPortDirection(uint8 copy_u8PortID, uint8 copy_u8PortDir);
+void DIO_voidSetPortValue(uint8 copy_u8PortID, uint8 copy_u8PortVal);
 
+void DIO_voidSetPinDirection(uint8 copy_u8PortID, uint8 copy_u8PinID, uint8 Copy_u8PinDir);
+void DIO_voidSetPinValue(uint8 copy_u8PortID, uint8 copy_u8PinID, uint8 Copy_u8PinValue);
+
+uint8 DIO_voidGetBitValue(uint8 copy_u8PortID, uint8 copy_u8PinID);
 
 #endif /* DIO_H_ */

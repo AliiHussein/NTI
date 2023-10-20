@@ -5,14 +5,24 @@
  * Author : Ali
  */ 
 
-#include "Bit_math.h"
-#include "std_types.h"
+#include "std_macros.h"
+#include "DIO.h"
 
 int main(void)
 {
+	DIO_voidSetPinDirection(portA, 2, OUTPUT);
+	DIO_voidSetPortDirection(portB, OUTPUT);
+	DIO_voidSetPortValue(portB, HIGH);
 	
-    while (1) 
-    {
-    }
+	DIO_voidSetPortDirection(portC, OUTPUT);
+	DIO_voidSetPortValue(portC, LOW);
+	while(1){
+		
+		DIO_voidSetPinValue(portA, 2, HIGH);
+		_delay_ms(1000);
+		DIO_voidSetPinValue(portA, 2, LOW);
+		_delay_ms(1000);
+	}
+    
 }
 
