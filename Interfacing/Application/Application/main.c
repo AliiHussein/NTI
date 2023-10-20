@@ -6,21 +6,15 @@
  */ 
 
 #include "std_macros.h"
-#include "DIO.h"
+#include "HAL/LED.h"
+#include "MCAL/DIO.h"
 
 int main(void)
 {
-	DIO_voidSetPinDirection(portA, 2, OUTPUT);
-	DIO_voidSetPortDirection(portB, OUTPUT);
-	DIO_voidSetPortValue(portB, HIGH);
-	
-	DIO_voidSetPortDirection(portC, OUTPUT);
-	DIO_voidSetPortValue(portC, LOW);
+	led_init(portA, 7);
 	while(1){
 		
-		DIO_voidSetPinValue(portA, 2, HIGH);
-		_delay_ms(1000);
-		DIO_voidSetPinValue(portA, 2, LOW);
+		led_toggle(portA, 7);
 		_delay_ms(1000);
 	}
     
