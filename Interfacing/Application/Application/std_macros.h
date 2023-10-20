@@ -11,9 +11,9 @@
 
 #define F_CPU 16000000UL
 #include <util/delay.h>
-#include <avr/interrupt.h>
 #include "Bit_math.h"
 #include "std_types.h"
+#include "memMap.h"
 
 
 #endif /* STD_MACROS_H_ */

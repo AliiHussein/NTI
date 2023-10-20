@@ -84,7 +84,7 @@ void DIO_voidSetPinValue(uint8 copy_u8PortID, uint8 copy_u8PinID, uint8 Copy_u8P
 }
 
 uint8 DIO_voidGetBitValue(uint8 copy_u8PortID, uint8 copy_u8PinID){
-	uint8 value;
+	uint8 value = 0;
 	switch(copy_u8PortID){
 		case portA: value = READBIT(PINA, copy_u8PinID); break;
 		case portB: value = READBIT(PINB, copy_u8PinID); break;
