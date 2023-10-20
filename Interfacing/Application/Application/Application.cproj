@@ -40,6 +40,19 @@
   </dependencies>
 </framework-data>
     </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1E9502</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Simulator</ToolName>
+    </com_atmel_avrdbg_tool_simulator>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -134,6 +147,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\LED.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\seven_seg.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\seven_seg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\seven_seg_cfg.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">

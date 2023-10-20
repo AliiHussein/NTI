@@ -6,6 +6,8 @@ HAL\Button.c
 
 HAL\LED.c
 
+HAL\seven_seg.c
+
 main.c
 
 MCAL\DIO.c

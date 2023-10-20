@@ -2,6 +2,8 @@ Archive member included to satisfy reference by file (symbol)
 
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o (exit)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+                              HAL/seven_seg.o (__do_copy_data)
 
 Discarded input sections
 
@@ -15,6 +17,9 @@ Discarded input sections
  .bss           0x00000000        0x0 HAL/LED.o
  .text.led_on   0x00000000        0x8 HAL/LED.o
  .text.led_off  0x00000000        0x8 HAL/LED.o
+ .text          0x00000000        0x0 HAL/seven_seg.o
+ .data          0x00000000        0x0 HAL/seven_seg.o
+ .bss           0x00000000        0x0 HAL/seven_seg.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -25,8 +30,6 @@ Discarded input sections
                 0x00000000       0x58 MCAL/DIO.o
  .text.DIO_voidSetPortValue
                 0x00000000       0x58 MCAL/DIO.o
- .text.DIO_voidSetPinValue
-                0x00000000       0xe8 MCAL/DIO.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -43,6 +46,22 @@ Discarded input sections
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
 
 Memory Configuration
 
@@ -61,6 +80,7 @@ Linker script and memory map
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
 LOAD HAL/Button.o
 LOAD HAL/LED.o
+LOAD HAL/seven_seg.o
 LOAD main.o
 LOAD MCAL/DIO.o
 START GROUP
@@ -172,7 +192,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x2ee
+.text           0x00000000      0x4be
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -213,6 +233,8 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
+ .init4         0x00000060       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
+                0x00000060                __do_copy_data
  *(.init4)
  *(.init5)
  *(.init5)
@@ -223,58 +245,67 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000060        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
+ .init9         0x00000076        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  *(.init9)
  *(.text)
- .text          0x00000068        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
-                0x00000068                __vector_1
-                0x00000068                __vector_12
-                0x00000068                __bad_interrupt
-                0x00000068                __vector_6
-                0x00000068                __vector_3
-                0x00000068                __vector_11
-                0x00000068                __vector_13
-                0x00000068                __vector_17
-                0x00000068                __vector_19
-                0x00000068                __vector_7
-                0x00000068                __vector_5
-                0x00000068                __vector_4
-                0x00000068                __vector_9
-                0x00000068                __vector_2
-                0x00000068                __vector_15
-                0x00000068                __vector_8
-                0x00000068                __vector_14
-                0x00000068                __vector_10
-                0x00000068                __vector_16
-                0x00000068                __vector_18
-                0x00000068                __vector_20
-                0x0000006c                . = ALIGN (0x2)
+ .text          0x0000007e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
+                0x0000007e                __vector_1
+                0x0000007e                __vector_12
+                0x0000007e                __bad_interrupt
+                0x0000007e                __vector_6
+                0x0000007e                __vector_3
+                0x0000007e                __vector_11
+                0x0000007e                __vector_13
+                0x0000007e                __vector_17
+                0x0000007e                __vector_19
+                0x0000007e                __vector_7
+                0x0000007e                __vector_5
+                0x0000007e                __vector_4
+                0x0000007e                __vector_9
+                0x0000007e                __vector_2
+                0x0000007e                __vector_15
+                0x0000007e                __vector_8
+                0x0000007e                __vector_14
+                0x0000007e                __vector_10
+                0x0000007e                __vector_16
+                0x0000007e                __vector_18
+                0x0000007e                __vector_20
+                0x00000082                . = ALIGN (0x2)
  *(.text.*)
  .text.button_init
-                0x0000006c       0x80 HAL/Button.o
-                0x0000006c                button_init
+                0x00000082       0x80 HAL/Button.o
+                0x00000082                button_init
  .text.button_read
-                0x000000ec        0x6 HAL/Button.o
-                0x000000ec                button_read
+                0x00000102        0x6 HAL/Button.o
+                0x00000102                button_read
  .text.led_init
-                0x000000f2        0x8 HAL/LED.o
-                0x000000f2                led_init
+                0x00000108        0x8 HAL/LED.o
+                0x00000108                led_init
  .text.led_toggle
-                0x000000fa       0x6e HAL/LED.o
-                0x000000fa                led_toggle
- .text.main     0x00000168       0x38 main.o
-                0x00000168                main
+                0x00000110       0x6e HAL/LED.o
+                0x00000110                led_toggle
+ .text.seven_seg_init
+                0x0000017e       0x3e HAL/seven_seg.o
+                0x0000017e                seven_seg_init
+ .text.seven_seg_write
+                0x000001bc       0x70 HAL/seven_seg.o
+                0x000001bc                seven_seg_write
+ .text.main     0x0000022c       0x5c main.o
+                0x0000022c                main
  .text.DIO_voidSetPinDirection
-                0x000001a0       0xe8 MCAL/DIO.o
-                0x000001a0                DIO_voidSetPinDirection
+                0x00000288       0xe8 MCAL/DIO.o
+                0x00000288                DIO_voidSetPinDirection
+ .text.DIO_voidSetPinValue
+                0x00000370       0xe8 MCAL/DIO.o
+                0x00000370                DIO_voidSetPinValue
  .text.DIO_voidGetBitValue
-                0x00000288       0x62 MCAL/DIO.o
-                0x00000288                DIO_voidGetBitValue
-                0x000002ea                . = ALIGN (0x2)
+                0x00000458       0x62 MCAL/DIO.o
+                0x00000458                DIO_voidGetBitValue
+                0x000004ba                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000002ea        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000002ea                _exit
-                0x000002ea                exit
+ .fini9         0x000004ba        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000004ba                _exit
+                0x000004ba                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -293,36 +324,38 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000002ea        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000004ba        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000002ee                _etext = .
+                0x000004be                _etext = .
 
-.data           0x00800060        0x0 load address 0x000002ee
-                [!provide]                PROVIDE (__data_start, .)
+.data           0x00800060        0xa load address 0x000004be
+                0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
+ .data.ss_data  0x00800060        0xa HAL/seven_seg.o
+                0x00800060                ss_data
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.r*)
-                0x00800060                . = ALIGN (0x2)
-                0x00800060                _edata = .
-                [!provide]                PROVIDE (__data_end, .)
+                0x0080006a                . = ALIGN (0x2)
+                0x0080006a                _edata = .
+                0x0080006a                PROVIDE (__data_end, .)
 
-.bss            0x00800060        0x0
+.bss            0x0080006a        0x0
                 [!provide]                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x000002ee                __data_load_start = LOADADDR (.data)
-                0x000002ee                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000004be                __data_load_start = LOADADDR (.data)
+                0x000004c8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800060        0x0
+.noinit         0x0080006a        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800060                _end = .
+                0x0080006a                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -367,6 +400,7 @@ END GROUP
  .comment       0x00000000       0x30 HAL/Button.o
                                  0x31 (size before relaxing)
  .comment       0x00000030       0x31 HAL/LED.o
+ .comment       0x00000030       0x31 HAL/seven_seg.o
  .comment       0x00000030       0x31 main.o
  .comment       0x00000030       0x31 MCAL/DIO.o
 
@@ -390,68 +424,77 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xc0
+.debug_aranges  0x00000000       0xe8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 HAL/Button.o
  .debug_aranges
                 0x00000028       0x38 HAL/LED.o
  .debug_aranges
-                0x00000060       0x20 main.o
+                0x00000060       0x28 HAL/seven_seg.o
  .debug_aranges
-                0x00000080       0x40 MCAL/DIO.o
+                0x00000088       0x20 main.o
+ .debug_aranges
+                0x000000a8       0x40 MCAL/DIO.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xc95
+.debug_info     0x00000000      0xf1d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x18a HAL/Button.o
  .debug_info    0x00000670      0x233 HAL/LED.o
- .debug_info    0x000008a3      0x1d6 main.o
- .debug_info    0x00000a79      0x21c MCAL/DIO.o
+ .debug_info    0x000008a3      0x195 HAL/seven_seg.o
+ .debug_info    0x00000a38      0x2c9 main.o
+ .debug_info    0x00000d01      0x21c MCAL/DIO.o
 
-.debug_abbrev   0x00000000      0x7ef
+.debug_abbrev   0x00000000      0x924
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_abbrev  0x000004a3       0xbf HAL/Button.o
  .debug_abbrev  0x00000562       0xbb HAL/LED.o
- .debug_abbrev  0x0000061d      0x117 main.o
- .debug_abbrev  0x00000734       0xbb MCAL/DIO.o
+ .debug_abbrev  0x0000061d      0x109 HAL/seven_seg.o
+ .debug_abbrev  0x00000726      0x143 main.o
+ .debug_abbrev  0x00000869       0xbb MCAL/DIO.o
 
-.debug_line     0x00000000      0x594
+.debug_line     0x00000000      0x741
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000116       0xa6 HAL/Button.o
  .debug_line    0x000001bc       0xbd HAL/LED.o
- .debug_line    0x00000279      0x151 main.o
- .debug_line    0x000003ca      0x1ca MCAL/DIO.o
+ .debug_line    0x00000279      0x195 HAL/seven_seg.o
+ .debug_line    0x0000040e      0x169 main.o
+ .debug_line    0x00000577      0x1ca MCAL/DIO.o
 
-.debug_frame    0x00000000      0x11c
+.debug_frame    0x00000000      0x150
  *(.debug_frame)
  .debug_frame   0x00000000       0x40 HAL/Button.o
  .debug_frame   0x00000040       0x54 HAL/LED.o
- .debug_frame   0x00000094       0x24 main.o
- .debug_frame   0x000000b8       0x64 MCAL/DIO.o
+ .debug_frame   0x00000094       0x34 HAL/seven_seg.o
+ .debug_frame   0x000000c8       0x24 main.o
+ .debug_frame   0x000000ec       0x64 MCAL/DIO.o
 
-.debug_str      0x00000000      0x4c4
+.debug_str      0x00000000      0x516
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x212 HAL/Button.o
                                 0x246 (size before relaxing)
  .debug_str     0x000003a8       0x49 HAL/LED.o
                                 0x253 (size before relaxing)
- .debug_str     0x000003f1       0x55 main.o
-                                0x245 (size before relaxing)
- .debug_str     0x00000446       0x7e MCAL/DIO.o
+ .debug_str     0x000003f1       0x96 HAL/seven_seg.o
+                                0x248 (size before relaxing)
+ .debug_str     0x00000487       0x11 main.o
+                                0x2a2 (size before relaxing)
+ .debug_str     0x00000498       0x7e MCAL/DIO.o
                                 0x2b5 (size before relaxing)
 
-.debug_loc      0x00000000      0x573
+.debug_loc      0x00000000      0x5f9
  *(.debug_loc)
  .debug_loc     0x00000000       0xc9 HAL/Button.o
  .debug_loc     0x000000c9      0x132 HAL/LED.o
- .debug_loc     0x000001fb      0x378 MCAL/DIO.o
+ .debug_loc     0x000001fb       0x86 HAL/seven_seg.o
+ .debug_loc     0x00000281      0x378 MCAL/DIO.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -471,12 +514,13 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x80
+.debug_ranges   0x00000000       0x98
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x18 HAL/Button.o
  .debug_ranges  0x00000018       0x28 HAL/LED.o
- .debug_ranges  0x00000040       0x10 main.o
- .debug_ranges  0x00000050       0x30 MCAL/DIO.o
+ .debug_ranges  0x00000040       0x18 HAL/seven_seg.o
+ .debug_ranges  0x00000058       0x10 main.o
+ .debug_ranges  0x00000068       0x30 MCAL/DIO.o
 
 .debug_macro
  *(.debug_macro)
