@@ -186,9 +186,6 @@ void playWithArray(){
         fflush(stdin);
         scanf("%d", &options);
 
-        
-
-
         switch(options){
             case 1: scan_array(array, ARRAY_SIZE); break;
             case 2: print_array(array, ARRAY_SIZE); break;
@@ -210,7 +207,6 @@ void playWithPointers(){
     char ch1;
     float num2;
 
-
     while(options != 4u){
         printf("\nChoose a number from the List\n");
         printf("1. Pointer to int\n");
@@ -221,9 +217,7 @@ void playWithPointers(){
         printf("Your Choice: ");
         fflush(stdin);
         scanf("%d", &options);
-
-
-
+        fflush(stdin);
         switch(options){
             case 1: printf("Value: "); scanf("%d", &num1); ptr = &num1; printf("PTR= %d,  *PTR= %d\n", ptr, *(int*)ptr); break;
             case 2: printf("Value: "); scanf("%c", &ch1); ptr = &ch1;  printf("PTR= %d,  *PTR= %c\n", ptr, *(char*)ptr); break;
@@ -231,7 +225,5 @@ void playWithPointers(){
             case 4: break;
             default: printf("Invalid option!\n"); break;
         }
-
     }
-
 }

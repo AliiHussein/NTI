@@ -27,15 +27,13 @@ int main()
         printf("Your Choice: ");
         scanf("%d", &options);
 
-
-            switch(options){
+        switch(options){
             case 1: calculator(); break;
             case 2: playWithArray(); break;
             case 3: playWithPointers(); break;
             case 4: break;
             default: printf("Invalid option!\n"); break;
-            }
-
+        }
     }
 
     printf("\n THANK YOU!");

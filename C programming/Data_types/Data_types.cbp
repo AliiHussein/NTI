@@ -31,9 +31,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Bit_math.h" />
+		<Unit filename="functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="std_h.h" />
+		<Unit filename="std_types.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
