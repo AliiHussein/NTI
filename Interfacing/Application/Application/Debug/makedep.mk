@@ -6,7 +6,7 @@ HAL\Button.c
 
 HAL\LED.c
 
-HAL\seven_seg.c
+HAL\SevenSeg.c
 
 main.c
 

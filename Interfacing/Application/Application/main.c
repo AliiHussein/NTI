@@ -12,18 +12,18 @@
 
 int main(void)
 {
-	led_init(portA, 6);
-	button_init(portD, 7);
-	DIO_voidSetPinDirection(portC, 5, OUTPUT);
-	DIO_voidSetPinValue(portC, 5, LOW);
-	seven_seg_init();
-	seven_seg_write(2, 1);
+	sevenseg_init();
+	uint16 value = 1260;
+	uint16 temp;
 	while(1){
-		if(!button_read(portD, 7)){
-			led_toggle(portA, 6);
-			_delay_ms(300);
-		}
-		
+		temp = value;
+		sevenseg_write(temp%10, 1);
+		temp /= 10;
+		sevenseg_write(temp%10, 2);
+		temp /= 10;
+		sevenseg_write(temp%10, 3);
+		temp /= 10;
+		sevenseg_write(temp%10, 4);
 	}
     
 }
