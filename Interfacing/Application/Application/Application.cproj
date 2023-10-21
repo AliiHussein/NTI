@@ -143,6 +143,15 @@
     <Compile Include="HAL\Button.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD_cfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\LED.c">
       <SubType>compile</SubType>
     </Compile>

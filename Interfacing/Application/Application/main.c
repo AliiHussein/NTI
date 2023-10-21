@@ -9,21 +9,17 @@
 #include "HAL/LED.h"
 #include "MCAL/DIO.h"
 #include "HAL/Button.h"
+#include "HAL/LCD.h"
+#include "HAL/SevenSeg.h"
 
 int main(void)
 {
-	sevenseg_init();
-	uint16 value = 1260;
-	uint16 temp;
+	LCD_init();
+	LCD_write_command(0x80);
+	LCD_write_string("Naseef Mohamed");
+	
 	while(1){
-		temp = value;
-		sevenseg_write(temp%10, 1);
-		temp /= 10;
-		sevenseg_write(temp%10, 2);
-		temp /= 10;
-		sevenseg_write(temp%10, 3);
-		temp /= 10;
-		sevenseg_write(temp%10, 4);
+		
 	}
     
 }

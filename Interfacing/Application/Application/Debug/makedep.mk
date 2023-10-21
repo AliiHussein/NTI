@@ -4,6 +4,8 @@
 
 HAL\Button.c
 
+HAL\LCD.c
+
 HAL\LED.c
 
 HAL\SevenSeg.c
