@@ -1,16 +1,14 @@
-main.d main.o: .././main.c .././std_macros.h \
+HAL/KEYPAD.d HAL/KEYPAD.o: ../HAL/KEYPAD.c ../std_macros.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././Bit_math.h .././std_types.h .././memMap.h .././HAL/LED.h \
- ../std_macros.h ../MCAL/DIO.h .././MCAL/DIO.h .././HAL/Button.h \
- .././HAL/LCD.h .././HAL/SevenSeg.h .././HAL/SevenSeg_CFG.h \
- .././HAL/KEYPAD.h
+ ../Bit_math.h ../std_types.h ../memMap.h ../HAL/KEYPAD.h \
+ ../HAL/KEYPAD_cfg.h
 
-.././std_macros.h:
+../std_macros.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
 
@@ -24,26 +22,12 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
-.././Bit_math.h:
+../Bit_math.h:
 
-.././std_types.h:
+../std_types.h:
 
-.././memMap.h:
+../memMap.h:
 
-.././HAL/LED.h:
+../HAL/KEYPAD.h:
 
-../std_macros.h:
-
-../MCAL/DIO.h:
-
-.././MCAL/DIO.h:
-
-.././HAL/Button.h:
-
-.././HAL/LCD.h:
-
-.././HAL/SevenSeg.h:
-
-.././HAL/SevenSeg_CFG.h:
-
-.././HAL/KEYPAD.h:
+../HAL/KEYPAD_cfg.h:

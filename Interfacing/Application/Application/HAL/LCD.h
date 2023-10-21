@@ -12,10 +12,10 @@
 #include "std_macros.h"
 
 void LCD_init(void);
-void LCD_write_char(uint8_t);
-void LCD_write_command(uint8_t);
-void LCD_write_number(int32_t);
-void LCD_write_string(uint8_t *);
+void LCD_write_char(uint8);
+void LCD_write_command(uint8);
+void LCD_write_number(int32);
+void LCD_write_string(uint8 *);
 void clear_screen(void);
 
 

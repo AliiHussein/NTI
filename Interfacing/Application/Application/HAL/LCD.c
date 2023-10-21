@@ -34,7 +34,7 @@ void LCD_init(void){
 * Parameters   : data  (data to be written on lcd)
 * Return value : void
 *****************************************************************************/
-void LCD_write_char(uint8_t data){
+void LCD_write_char(uint8 data){
 	LCD_RS(1);
 	LCD_D4(READBIT(data, 4));
 	LCD_D5(READBIT(data, 5));
@@ -64,7 +64,7 @@ void LCD_write_char(uint8_t data){
 * Parameters   : cmd  (command to be done by lcd)
 * Return value : void
 *****************************************************************************/
-void LCD_write_command(uint8_t cmd){
+void LCD_write_command(uint8 cmd){
 	LCD_RS(0);
 	LCD_D4(READBIT(cmd, 4));
 	LCD_D5(READBIT(cmd, 5));
@@ -93,10 +93,10 @@ void LCD_write_command(uint8_t cmd){
 * Parameters   : num  (num to be written on lcd)
 * Return value : void
 *****************************************************************************/
-void LCD_write_number(int32_t num){
-	int8_t i = 0;
-	uint8_t num_arr[10];
-	uint8_t neg_flag = 0;
+void LCD_write_number(int32 num){
+	int8 i = 0;
+	uint8 num_arr[10];
+	uint8 neg_flag = 0;
 	
 	if(num < 0){
 		num *= -1;
@@ -129,10 +129,10 @@ void LCD_write_number(int32_t num){
 * Parameters   : *txt  (array of char to be written on lcd)
 * Return value : void
 *****************************************************************************/
-void LCD_write_string(uint8_t * str){
-	uint8_t i;
+void LCD_write_string(uint8 * str){
+	uint8 i;
 	
-	for(i = 0; str[i] != 0; i++){
+	for(i = 0; str[i] != '\0'; i++){
 		LCD_write_char(str[i]);
 	}
 	
