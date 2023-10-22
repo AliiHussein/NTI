@@ -6,12 +6,12 @@
  */ 
 
 #include "std_macros.h"
-#include "HAL/LED.h"
-#include "MCAL/DIO.h"
-#include "HAL/Button.h"
-#include "HAL/LCD.h"
-#include "HAL/SevenSeg.h"
-#include "HAL/KEYPAD.h"
+#include "HAL/LED/LED.h"
+#include "MCAL/DIO/DIO.h"
+#include "HAL/Button/Button.h"
+#include "HAL/LCD/LCD.h"
+#include "HAL/SevenSeg/SevenSeg.h"
+#include "HAL/KEYPAD/KEYPAD.h"
 
 uint8 get_input_from_user(void);
 

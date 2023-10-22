@@ -1,15 +1,15 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
-                              HAL/LCD.o (__divmodsi4)
+                              HAL/LCD/LCD.o (__divmodsi4)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_negsi2.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o) (__negsi2)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                              HAL/SevenSeg.o (__tablejump2__)
+                              HAL/SevenSeg/SevenSeg.o (__tablejump2__)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_copy_data.o)
-                              HAL/KEYPAD.o (__do_copy_data)
+                              HAL/KEYPAD/KEYPAD.o (__do_copy_data)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o) (__udivmodsi4)
 
@@ -17,103 +17,103 @@ Discarded input sections
 
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
- .text          0x00000000        0x0 HAL/Button.o
- .data          0x00000000        0x0 HAL/Button.o
- .bss           0x00000000        0x0 HAL/Button.o
+ .text          0x00000000        0x0 HAL/Button/Button.o
+ .data          0x00000000        0x0 HAL/Button/Button.o
+ .bss           0x00000000        0x0 HAL/Button/Button.o
  .text.button_init
-                0x00000000       0x80 HAL/Button.o
+                0x00000000       0x80 HAL/Button/Button.o
  .text.button_read
-                0x00000000        0x6 HAL/Button.o
- .debug_info    0x00000000      0x18a HAL/Button.o
- .debug_abbrev  0x00000000       0xbf HAL/Button.o
- .debug_loc     0x00000000       0xc9 HAL/Button.o
+                0x00000000        0x6 HAL/Button/Button.o
+ .debug_info    0x00000000      0x18a HAL/Button/Button.o
+ .debug_abbrev  0x00000000       0xbf HAL/Button/Button.o
+ .debug_loc     0x00000000       0xc9 HAL/Button/Button.o
  .debug_aranges
-                0x00000000       0x28 HAL/Button.o
- .debug_ranges  0x00000000       0x18 HAL/Button.o
- .debug_line    0x00000000       0xa6 HAL/Button.o
- .debug_str     0x00000000      0x246 HAL/Button.o
- .comment       0x00000000       0x31 HAL/Button.o
- .debug_frame   0x00000000       0x40 HAL/Button.o
- .text          0x00000000        0x0 HAL/KEYPAD.o
- .data          0x00000000        0x0 HAL/KEYPAD.o
- .bss           0x00000000        0x0 HAL/KEYPAD.o
+                0x00000000       0x28 HAL/Button/Button.o
+ .debug_ranges  0x00000000       0x18 HAL/Button/Button.o
+ .debug_line    0x00000000       0xb1 HAL/Button/Button.o
+ .debug_str     0x00000000      0x24d HAL/Button/Button.o
+ .comment       0x00000000       0x31 HAL/Button/Button.o
+ .debug_frame   0x00000000       0x40 HAL/Button/Button.o
+ .text          0x00000000        0x0 HAL/KEYPAD/KEYPAD.o
+ .data          0x00000000        0x0 HAL/KEYPAD/KEYPAD.o
+ .bss           0x00000000        0x0 HAL/KEYPAD/KEYPAD.o
  .rodata.keypad_matrix
-                0x00000000       0x10 HAL/KEYPAD.o
- .text          0x00000000        0x0 HAL/LCD.o
- .data          0x00000000        0x0 HAL/LCD.o
- .bss           0x00000000        0x0 HAL/LCD.o
+                0x00000000       0x10 HAL/KEYPAD/KEYPAD.o
+ .text          0x00000000        0x0 HAL/LCD/LCD.o
+ .data          0x00000000        0x0 HAL/LCD/LCD.o
+ .bss           0x00000000        0x0 HAL/LCD/LCD.o
  .text.LCD_write_number
-                0x00000000       0xba HAL/LCD.o
+                0x00000000       0xba HAL/LCD/LCD.o
  .text.LCD_write_string
-                0x00000000       0x26 HAL/LCD.o
+                0x00000000       0x26 HAL/LCD/LCD.o
  .text.clear_screen
-                0x00000000        0x8 HAL/LCD.o
- .text          0x00000000        0x0 HAL/LED.o
- .data          0x00000000        0x0 HAL/LED.o
- .bss           0x00000000        0x0 HAL/LED.o
+                0x00000000        0x8 HAL/LCD/LCD.o
+ .text          0x00000000        0x0 HAL/LED/LED.o
+ .data          0x00000000        0x0 HAL/LED/LED.o
+ .bss           0x00000000        0x0 HAL/LED/LED.o
  .text.led_init
-                0x00000000        0x8 HAL/LED.o
- .text.led_on   0x00000000        0x8 HAL/LED.o
- .text.led_off  0x00000000        0x8 HAL/LED.o
+                0x00000000        0x8 HAL/LED/LED.o
+ .text.led_on   0x00000000        0x8 HAL/LED/LED.o
+ .text.led_off  0x00000000        0x8 HAL/LED/LED.o
  .text.led_toggle
-                0x00000000       0x6e HAL/LED.o
- .debug_info    0x00000000      0x233 HAL/LED.o
- .debug_abbrev  0x00000000       0xbb HAL/LED.o
- .debug_loc     0x00000000      0x132 HAL/LED.o
+                0x00000000       0x6e HAL/LED/LED.o
+ .debug_info    0x00000000      0x233 HAL/LED/LED.o
+ .debug_abbrev  0x00000000       0xbb HAL/LED/LED.o
+ .debug_loc     0x00000000      0x132 HAL/LED/LED.o
  .debug_aranges
-                0x00000000       0x38 HAL/LED.o
- .debug_ranges  0x00000000       0x28 HAL/LED.o
- .debug_line    0x00000000       0xbd HAL/LED.o
- .debug_str     0x00000000      0x253 HAL/LED.o
- .comment       0x00000000       0x31 HAL/LED.o
- .debug_frame   0x00000000       0x54 HAL/LED.o
- .text          0x00000000        0x0 HAL/SevenSeg.o
- .data          0x00000000        0x0 HAL/SevenSeg.o
- .bss           0x00000000        0x0 HAL/SevenSeg.o
+                0x00000000       0x38 HAL/LED/LED.o
+ .debug_ranges  0x00000000       0x28 HAL/LED/LED.o
+ .debug_line    0x00000000       0xc5 HAL/LED/LED.o
+ .debug_str     0x00000000      0x257 HAL/LED/LED.o
+ .comment       0x00000000       0x31 HAL/LED/LED.o
+ .debug_frame   0x00000000       0x54 HAL/LED/LED.o
+ .text          0x00000000        0x0 HAL/SevenSeg/SevenSeg.o
+ .data          0x00000000        0x0 HAL/SevenSeg/SevenSeg.o
+ .bss           0x00000000        0x0 HAL/SevenSeg/SevenSeg.o
  .text.sevenseg_init
-                0x00000000       0x14 HAL/SevenSeg.o
+                0x00000000       0x14 HAL/SevenSeg/SevenSeg.o
  .text.sevenseg_write
-                0x00000000      0x174 HAL/SevenSeg.o
+                0x00000000      0x174 HAL/SevenSeg/SevenSeg.o
  .progmem.gcc_sw_table.sevenseg_write
-                0x00000000       0x14 HAL/SevenSeg.o
+                0x00000000       0x14 HAL/SevenSeg/SevenSeg.o
  .text.sevenseg_write_four
-                0x00000000        0x2 HAL/SevenSeg.o
- .debug_info    0x00000000      0x180 HAL/SevenSeg.o
- .debug_abbrev  0x00000000      0x107 HAL/SevenSeg.o
- .debug_loc     0x00000000      0x15e HAL/SevenSeg.o
+                0x00000000        0x2 HAL/SevenSeg/SevenSeg.o
+ .debug_info    0x00000000      0x180 HAL/SevenSeg/SevenSeg.o
+ .debug_abbrev  0x00000000      0x107 HAL/SevenSeg/SevenSeg.o
+ .debug_loc     0x00000000      0x15e HAL/SevenSeg/SevenSeg.o
  .debug_aranges
-                0x00000000       0x30 HAL/SevenSeg.o
- .debug_ranges  0x00000000       0x20 HAL/SevenSeg.o
- .debug_line    0x00000000      0x1ae HAL/SevenSeg.o
- .debug_str     0x00000000      0x246 HAL/SevenSeg.o
- .comment       0x00000000       0x31 HAL/SevenSeg.o
- .debug_frame   0x00000000       0x44 HAL/SevenSeg.o
+                0x00000000       0x30 HAL/SevenSeg/SevenSeg.o
+ .debug_ranges  0x00000000       0x20 HAL/SevenSeg/SevenSeg.o
+ .debug_line    0x00000000      0x1b7 HAL/SevenSeg/SevenSeg.o
+ .debug_str     0x00000000      0x24f HAL/SevenSeg/SevenSeg.o
+ .comment       0x00000000       0x31 HAL/SevenSeg/SevenSeg.o
+ .debug_frame   0x00000000       0x44 HAL/SevenSeg/SevenSeg.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
- .text          0x00000000        0x0 MCAL/DIO.o
- .data          0x00000000        0x0 MCAL/DIO.o
- .bss           0x00000000        0x0 MCAL/DIO.o
+ .text          0x00000000        0x0 MCAL/DIO/DIO.o
+ .data          0x00000000        0x0 MCAL/DIO/DIO.o
+ .bss           0x00000000        0x0 MCAL/DIO/DIO.o
  .text.DIO_voidSetPortDirection
-                0x00000000       0x58 MCAL/DIO.o
+                0x00000000       0x58 MCAL/DIO/DIO.o
  .text.DIO_voidSetPortValue
-                0x00000000       0x58 MCAL/DIO.o
+                0x00000000       0x58 MCAL/DIO/DIO.o
  .text.DIO_voidSetPinDirection
-                0x00000000       0xe8 MCAL/DIO.o
+                0x00000000       0xe8 MCAL/DIO/DIO.o
  .text.DIO_voidSetPinValue
-                0x00000000       0xe8 MCAL/DIO.o
+                0x00000000       0xe8 MCAL/DIO/DIO.o
  .text.DIO_voidGetBitValue
-                0x00000000       0x62 MCAL/DIO.o
- .debug_info    0x00000000      0x21c MCAL/DIO.o
- .debug_abbrev  0x00000000       0xbb MCAL/DIO.o
- .debug_loc     0x00000000      0x378 MCAL/DIO.o
+                0x00000000       0x62 MCAL/DIO/DIO.o
+ .debug_info    0x00000000      0x21c MCAL/DIO/DIO.o
+ .debug_abbrev  0x00000000       0xbb MCAL/DIO/DIO.o
+ .debug_loc     0x00000000      0x378 MCAL/DIO/DIO.o
  .debug_aranges
-                0x00000000       0x40 MCAL/DIO.o
- .debug_ranges  0x00000000       0x30 MCAL/DIO.o
- .debug_line    0x00000000      0x1ca MCAL/DIO.o
- .debug_str     0x00000000      0x2b5 MCAL/DIO.o
- .comment       0x00000000       0x31 MCAL/DIO.o
- .debug_frame   0x00000000       0x64 MCAL/DIO.o
+                0x00000000       0x40 MCAL/DIO/DIO.o
+ .debug_ranges  0x00000000       0x30 MCAL/DIO/DIO.o
+ .debug_line    0x00000000      0x1ce MCAL/DIO/DIO.o
+ .debug_str     0x00000000      0x2b9 MCAL/DIO/DIO.o
+ .comment       0x00000000       0x31 MCAL/DIO/DIO.o
+ .debug_frame   0x00000000       0x64 MCAL/DIO/DIO.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_divmodsi4.o)
@@ -226,13 +226,13 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
-LOAD HAL/Button.o
-LOAD HAL/KEYPAD.o
-LOAD HAL/LCD.o
-LOAD HAL/LED.o
-LOAD HAL/SevenSeg.o
+LOAD HAL/Button/Button.o
+LOAD HAL/KEYPAD/KEYPAD.o
+LOAD HAL/LCD/LCD.o
+LOAD HAL/LED/LED.o
+LOAD HAL/SevenSeg/SevenSeg.o
 LOAD main.o
-LOAD MCAL/DIO.o
+LOAD MCAL/DIO/DIO.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP
@@ -423,19 +423,19 @@ END GROUP
                 0x00000082                . = ALIGN (0x2)
  *(.text.*)
  .text.KEYPAD_init
-                0x00000082       0x32 HAL/KEYPAD.o
+                0x00000082       0x32 HAL/KEYPAD/KEYPAD.o
                 0x00000082                KEYPAD_init
  .text.KEYPAD_read
-                0x000000b4      0x114 HAL/KEYPAD.o
+                0x000000b4      0x114 HAL/KEYPAD/KEYPAD.o
                 0x000000b4                KEYPAD_read
  .text.LCD_write_char
-                0x000001c8       0xe0 HAL/LCD.o
+                0x000001c8       0xe0 HAL/LCD/LCD.o
                 0x000001c8                LCD_write_char
  .text.LCD_write_command
-                0x000002a8       0xe0 HAL/LCD.o
+                0x000002a8       0xe0 HAL/LCD/LCD.o
                 0x000002a8                LCD_write_command
  .text.LCD_init
-                0x00000388       0x62 HAL/LCD.o
+                0x00000388       0x62 HAL/LCD/LCD.o
                 0x00000388                LCD_init
  .text.get_input_from_user
                 0x000003ea       0x28 main.o
@@ -536,9 +536,9 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 HAL/KEYPAD.o
+ .comment       0x00000000       0x30 HAL/KEYPAD/KEYPAD.o
                                  0x31 (size before relaxing)
- .comment       0x00000030       0x31 HAL/LCD.o
+ .comment       0x00000030       0x31 HAL/LCD/LCD.o
  .comment       0x00000030       0x31 main.o
 
 .note.gnu.avr.deviceinfo
@@ -564,9 +564,9 @@ END GROUP
 .debug_aranges  0x00000000       0x98
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x28 HAL/KEYPAD.o
+                0x00000000       0x28 HAL/KEYPAD/KEYPAD.o
  .debug_aranges
-                0x00000028       0x48 HAL/LCD.o
+                0x00000028       0x48 HAL/LCD/LCD.o
  .debug_aranges
                 0x00000070       0x28 main.o
 
@@ -576,44 +576,44 @@ END GROUP
 .debug_info     0x00000000      0xe23
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_info    0x000004e6      0x220 HAL/KEYPAD.o
- .debug_info    0x00000706      0x4fa HAL/LCD.o
+ .debug_info    0x000004e6      0x220 HAL/KEYPAD/KEYPAD.o
+ .debug_info    0x00000706      0x4fa HAL/LCD/LCD.o
  .debug_info    0x00000c00      0x223 main.o
 
 .debug_abbrev   0x00000000      0x889
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_abbrev  0x000004a3      0x10e HAL/KEYPAD.o
- .debug_abbrev  0x000005b1      0x191 HAL/LCD.o
+ .debug_abbrev  0x000004a3      0x10e HAL/KEYPAD/KEYPAD.o
+ .debug_abbrev  0x000005b1      0x191 HAL/LCD/LCD.o
  .debug_abbrev  0x00000742      0x147 main.o
 
-.debug_line     0x00000000      0x9bf
+.debug_line     0x00000000      0x9de
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_line    0x00000116      0x241 HAL/KEYPAD.o
- .debug_line    0x00000357      0x4d5 HAL/LCD.o
- .debug_line    0x0000082c      0x193 main.o
+ .debug_line    0x00000116      0x248 HAL/KEYPAD/KEYPAD.o
+ .debug_line    0x0000035e      0x4d9 HAL/LCD/LCD.o
+ .debug_line    0x00000837      0x1a7 main.o
 
 .debug_frame    0x00000000      0x110
  *(.debug_frame)
- .debug_frame   0x00000000       0x34 HAL/KEYPAD.o
- .debug_frame   0x00000034       0xa0 HAL/LCD.o
+ .debug_frame   0x00000000       0x34 HAL/KEYPAD/KEYPAD.o
+ .debug_frame   0x00000034       0xa0 HAL/LCD/LCD.o
  .debug_frame   0x000000d4       0x3c main.o
 
-.debug_str      0x00000000      0x43e
+.debug_str      0x00000000      0x449
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_str     0x00000196      0x201 HAL/KEYPAD.o
-                                0x23a (size before relaxing)
- .debug_str     0x00000397       0x82 HAL/LCD.o
-                                0x286 (size before relaxing)
- .debug_str     0x00000419       0x25 main.o
+ .debug_str     0x00000196      0x208 HAL/KEYPAD/KEYPAD.o
+                                0x241 (size before relaxing)
+ .debug_str     0x0000039e       0x86 HAL/LCD/LCD.o
+                                0x28a (size before relaxing)
+ .debug_str     0x00000424       0x25 main.o
                                 0x262 (size before relaxing)
 
 .debug_loc      0x00000000      0x6ba
  *(.debug_loc)
- .debug_loc     0x00000000      0x120 HAL/KEYPAD.o
- .debug_loc     0x00000120      0x507 HAL/LCD.o
+ .debug_loc     0x00000000      0x120 HAL/KEYPAD/KEYPAD.o
+ .debug_loc     0x00000120      0x507 HAL/LCD/LCD.o
  .debug_loc     0x00000627       0x93 main.o
 
 .debug_macinfo
@@ -636,8 +636,8 @@ END GROUP
 
 .debug_ranges   0x00000000       0x68
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x18 HAL/KEYPAD.o
- .debug_ranges  0x00000018       0x38 HAL/LCD.o
+ .debug_ranges  0x00000000       0x18 HAL/KEYPAD/KEYPAD.o
+ .debug_ranges  0x00000018       0x38 HAL/LCD/LCD.o
  .debug_ranges  0x00000050       0x18 main.o
 
 .debug_macro

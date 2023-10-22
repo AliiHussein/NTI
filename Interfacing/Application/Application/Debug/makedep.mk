@@ -2,17 +2,17 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-HAL\Button.c
+HAL\Button\Button.c
 
-HAL\KEYPAD.c
+HAL\KEYPAD\KEYPAD.c
 
-HAL\LCD.c
+HAL\LCD\LCD.c
 
-HAL\LED.c
+HAL\LED\LED.c
 
-HAL\SevenSeg.c
+HAL\SevenSeg\SevenSeg.c
 
 main.c
 
-MCAL\DIO.c
+MCAL\DIO\DIO.c
 

@@ -10,7 +10,7 @@
 #define LED_H_
 
 #include "std_macros.h"
-#include "MCAL/DIO.h"
+#include "MCAL/DIO/DIO.h"
 
 void led_init(uint8 copy_u8PortID, uint8 copy_u8PinID);
 void led_on(uint8 copy_u8PortID, uint8 copy_u8PinID);

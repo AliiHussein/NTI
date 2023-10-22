@@ -137,52 +137,52 @@
     <Compile Include="Bit_math.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\Button.c">
+    <Compile Include="HAL\Button\Button.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\Button.h">
+    <Compile Include="HAL\Button\Button.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\KEYPAD.c">
+    <Compile Include="HAL\KEYPAD\KEYPAD.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\KEYPAD.h">
+    <Compile Include="HAL\KEYPAD\KEYPAD.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\KEYPAD_cfg.h">
+    <Compile Include="HAL\KEYPAD\KEYPAD_cfg.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\LCD.c">
+    <Compile Include="HAL\LCD\LCD.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\LCD.h">
+    <Compile Include="HAL\LCD\LCD.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\LCD_cfg.h">
+    <Compile Include="HAL\LCD\LCD_cfg.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\LED.c">
+    <Compile Include="HAL\LED\LED.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\LED.h">
+    <Compile Include="HAL\LED\LED.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\SevenSeg.c">
+    <Compile Include="HAL\SevenSeg\SevenSeg.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\SevenSeg.h">
+    <Compile Include="HAL\SevenSeg\SevenSeg.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\SevenSeg_CFG.h">
+    <Compile Include="HAL\SevenSeg\SevenSeg_CFG.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MCAL\DIO.c">
+    <Compile Include="MCAL\DIO\DIO.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MCAL\DIO.h">
+    <Compile Include="MCAL\DIO\DIO.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="memMap.h">
@@ -197,8 +197,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HAL" />
+    <Folder Include="HAL\Button" />
+    <Folder Include="HAL\KEYPAD" />
+    <Folder Include="HAL\LCD" />
+    <Folder Include="HAL\LED" />
+    <Folder Include="HAL\SevenSeg" />
     <Folder Include="MCAL" />
     <Folder Include="CFG" />
+    <Folder Include="MCAL\DIO" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

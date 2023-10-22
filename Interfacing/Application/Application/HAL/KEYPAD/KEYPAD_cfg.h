@@ -11,11 +11,6 @@
 
 #include "std_macros.h"
 
-/*
-PORTC 0 to 3 pulled up input
-PORTC 4 to 7 Output
-
-*/
 #define INIT_KEYPAD_PINS() SETBIT(DDRC, 5); SETBIT(DDRC, 4); SETBIT(DDRC, 3); SETBIT(DDRC, 2); CLRBIT(DDRD, 7); CLRBIT(DDRD, 6); CLRBIT(DDRD, 5); CLRBIT(DDRD, 3)
 
 #define COL1() READBIT(PIND, 7)
