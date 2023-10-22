@@ -40,7 +40,6 @@ SUBDIRS :=  \
 ../HAL/LED \
 ../HAL/SevenSeg \
 ../MCAL \
-../CFG \
 ../MCAL/DIO
 
 
