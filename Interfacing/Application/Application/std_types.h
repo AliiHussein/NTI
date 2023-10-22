@@ -2,7 +2,7 @@
 #ifndef STD_TYPES_H
 #define	STD_TYPES_H
 
-#define NUL_PTR  ((void*)0)
+#define NULL  ((void*)0)
 
 /*.............section:data type declaration.......... */
 

@@ -64,3 +64,16 @@ int8 KEYPAD_read(){
 	return -1;
 }
 
+uint8 get_input_from_user(){
+	int8 key;
+	
+	do{
+		key = KEYPAD_read();
+	}while(key == -1);
+	
+	LCD_write_char(key);
+	_delay_ms(70);
+	
+	return key;
+}
+

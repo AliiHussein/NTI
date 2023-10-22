@@ -185,6 +185,30 @@
     <Compile Include="MCAL\DIO\DIO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\EXT\EXT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXT\EXT_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXT\EXT_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXT\EXT_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\GIE\GIE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\GIE\GIE_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\GIE\GIE_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\GIE\GIE_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="memMap.h">
       <SubType>compile</SubType>
     </Compile>
@@ -204,6 +228,8 @@
     <Folder Include="HAL\SevenSeg" />
     <Folder Include="MCAL" />
     <Folder Include="MCAL\DIO" />
+    <Folder Include="MCAL\EXT" />
+    <Folder Include="MCAL\GIE" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

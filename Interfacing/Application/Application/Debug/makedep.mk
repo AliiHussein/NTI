@@ -16,3 +16,7 @@ main.c
 
 MCAL\DIO\DIO.c
 
+MCAL\EXT\EXT.c
+
+MCAL\GIE\GIE.c
+

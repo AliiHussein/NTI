@@ -12,5 +12,4 @@
 
 
 
-
 #endif /* GIE_CFG_H_ */

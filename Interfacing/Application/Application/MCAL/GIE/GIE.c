@@ -6,6 +6,7 @@
  */ 
 
 #include "GIE_Interface.h"
+#include "std_macros.h"
 
 void GIE_Enable(void){
 	SETBIT(SREG, I_BIT);

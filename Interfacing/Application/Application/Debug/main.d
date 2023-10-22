@@ -6,9 +6,13 @@ main.d main.o: .././main.c .././std_macros.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  .././Bit_math.h .././std_types.h .././memMap.h .././HAL/LED/LED.h \
- ../std_macros.h ../MCAL/DIO/DIO.h .././MCAL/DIO/DIO.h \
- .././HAL/Button/Button.h .././HAL/LCD/LCD.h .././HAL/SevenSeg/SevenSeg.h \
- .././HAL/SevenSeg/SevenSeg_CFG.h .././HAL/KEYPAD/KEYPAD.h
+ ../std_macros.h ../MCAL/DIO/DIO.h .././HAL/Button/Button.h \
+ .././HAL/LCD/LCD.h .././HAL/SevenSeg/SevenSeg.h \
+ .././HAL/SevenSeg/SevenSeg_CFG.h .././HAL/KEYPAD/KEYPAD.h \
+ .././MCAL/DIO/DIO.h .././MCAL/EXT/EXT_Interface.h \
+ .././MCAL/EXT/EXT_Private.h .././MCAL/EXT/EXT_CFG.h ../std_types.h \
+ .././MCAL/GIE/GIE_Interface.h .././MCAL/GIE/GIE_Private.h \
+ .././MCAL/GIE/GIE_CFG.h
 
 .././std_macros.h:
 
@@ -36,8 +40,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../MCAL/DIO/DIO.h:
 
-.././MCAL/DIO/DIO.h:
-
 .././HAL/Button/Button.h:
 
 .././HAL/LCD/LCD.h:
@@ -47,3 +49,19 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././HAL/SevenSeg/SevenSeg_CFG.h:
 
 .././HAL/KEYPAD/KEYPAD.h:
+
+.././MCAL/DIO/DIO.h:
+
+.././MCAL/EXT/EXT_Interface.h:
+
+.././MCAL/EXT/EXT_Private.h:
+
+.././MCAL/EXT/EXT_CFG.h:
+
+../std_types.h:
+
+.././MCAL/GIE/GIE_Interface.h:
+
+.././MCAL/GIE/GIE_Private.h:
+
+.././MCAL/GIE/GIE_CFG.h:

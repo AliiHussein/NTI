@@ -13,6 +13,7 @@
 
 void KEYPAD_init(void);
 int8 KEYPAD_read(void);
+uint8 get_input_from_user(void);
 
 
 #endif /* KEYPAD_H_ */
