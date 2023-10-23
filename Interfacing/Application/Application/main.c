@@ -43,18 +43,10 @@ int main(void)
 	GIE_Enable();
 	
 	uint32 count = 0;
-	uint32 temp;
 	
 	while(1){
-		temp = count;
 		
-		sevenseg_write(temp%10, 1);
-		temp/=10;
-		sevenseg_write(temp%10, 2);
-		temp/=10;
-		sevenseg_write(temp%10, 3);
-		temp/=10;
-		sevenseg_write(temp%10, 4);
+		sevenseg_write_four(count);
 		
 		if(up_flag){
 			count++;

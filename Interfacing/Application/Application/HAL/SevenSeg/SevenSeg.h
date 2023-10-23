@@ -14,6 +14,7 @@
 
 void sevenseg_init(void);
 void sevenseg_write(uint8 value, uint8 ss_num);
+void sevenseg_write_four(uint32 value);
 
 
 #endif /* SEVENSEG_H_ */

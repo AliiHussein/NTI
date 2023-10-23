@@ -38,6 +38,13 @@ void sevenseg_write(uint8 value, uint8 ss_num){
 	_delay_ms(1);
 }
 
-void sevenseg_write_four(uint8 value, uint8 ss_num){
+void sevenseg_write_four(uint32 value){
 	
+	sevenseg_write(value%10, 1);
+	value/=10;
+	sevenseg_write(value%10, 2);
+	value/=10;
+	sevenseg_write(value%10, 3);
+	value/=10;
+	sevenseg_write(value%10, 4);
 }
