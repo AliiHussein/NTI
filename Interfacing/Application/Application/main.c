@@ -33,7 +33,7 @@ int main(void)
 	
 	while(1){
 		// Get ADC value
-		ADC_read(CH1, &val);
+		ADC_read(A1, &val);
 		
 		// Volt equation
 		volt = (5000UL*val) / 1024;

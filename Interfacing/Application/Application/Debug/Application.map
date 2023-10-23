@@ -676,13 +676,13 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1036
+.debug_info     0x00000000     0x102e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x4fa HAL/LCD/LCD.o
- .debug_info    0x000009e0      0x30c main.o
- .debug_info    0x00000cec       0xec MCAL/ADC/ADC.o
- .debug_info    0x00000dd8      0x25e MCAL/EXT/EXT.o
+ .debug_info    0x000009e0      0x304 main.o
+ .debug_info    0x00000ce4       0xec MCAL/ADC/ADC.o
+ .debug_info    0x00000dd0      0x25e MCAL/EXT/EXT.o
 
 .debug_abbrev   0x00000000      0x929
  *(.debug_abbrev)
