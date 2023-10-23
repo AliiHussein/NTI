@@ -25,7 +25,7 @@ void LCD_init(void){
 	LCD_write_command(0x0c);              /* Display on cursor off*/
 	LCD_write_command(0x06);              /* Increment cursor (shift cursor to right)*/
 	LCD_write_command(0x01);              /* Clear display screen*/
-	_delay_ms(2);
+	_delay_ms(30);
 }
 
 /*****************************************************************************

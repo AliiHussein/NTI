@@ -36,4 +36,9 @@
 
 #define ADC *((volatile uint16*)0x24)
 
+#define SFIOR *((volatile uint8*)0x50)
+#define ADTS2 7
+#define ADTS1 6
+#define ADTS0 0
+
 #endif /* ADC_PRIVATE_H_ */

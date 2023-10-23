@@ -15,52 +15,46 @@
 #include "MCAL/DIO/DIO.h"
 #include "MCAL/EXT/EXT_Interface.h"
 #include "MCAL/GIE/GIE_Interface.h"
-
-// Global Variable
-uint8 up_flag = 1;
-
-// Call Back function
-void reverse_count(void){
-	if(up_flag == 1){
-		up_flag = 0;
-	}
-	else{
-		up_flag = 1;
-	}
-}
+#include "MCAL/ADC/ADC_Interface.h"
 
 int main(void)
 {	
-	
-	// 7 Segment Initialization
-	sevenseg_init();
-	
-	// EXT interrupt Initialization	
-	EXT_init(EXT1, FALLING);
-	EXT_callback(reverse_count, EXT1);
+	ADC_init();
+	LCD_init();
 
-	// Global Interrupt Enabled
-	GIE_Enable();
+	uint16 val;
+	uint16 volt;
+	uint16 temp; // 1C -> 10 mV
 	
-	uint32 count = 0;
+	LCD_write_command(0x80);
+	LCD_write_string("ADC= ");
+	LCD_write_command(0xc0);
+	LCD_write_string("Temp= ");
 	
 	while(1){
+		// Get ADC value
+		ADC_read(CH1, &val);
 		
-		for(uint32 i = 0; i < 100; i++)
-		{
-			sevenseg_write_four(count);
-			_delay_ms(1);
-		}
+		// Volt equation
+		volt = (5000UL*val) / 1024;
 		
+		// Temp equation
+		temp = volt/10;
 		
-		if(up_flag){
-			count++;
-		}
-		else{
-			count--;
-		}
+		// Printing ADC value
+		LCD_write_command(0x86);
+		LCD_write_string("    ");
+		LCD_write_command(0x86);
+		LCD_write_number(val);
 		
-				
+		// Printing Volt value
+		LCD_write_command(0xc6);
+		LCD_write_string("    ");
+		LCD_write_command(0xc6);
+		LCD_write_number(temp);
+
+		_delay_ms(200);
+		
 	}
     
 }

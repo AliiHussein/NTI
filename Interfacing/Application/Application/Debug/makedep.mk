@@ -14,6 +14,8 @@ HAL\SevenSeg\SevenSeg.c
 
 main.c
 
+MCAL\ADC\ADC.c
+
 MCAL\DIO\DIO.c
 
 MCAL\EXT\EXT.c

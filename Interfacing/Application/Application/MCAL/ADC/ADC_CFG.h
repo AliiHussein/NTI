@@ -11,8 +11,6 @@
 
 #define VREF 5000
 #define RES 10
-
-
-
+typedef enum{CH0, CH1, CH2, CH3, CH4, CH5, CH6, CH7}Channels;
 
 #endif /* ADC_CFG_H_ */

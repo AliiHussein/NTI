@@ -42,7 +42,8 @@ SUBDIRS :=  \
 ../MCAL \
 ../MCAL/DIO \
 ../MCAL/EXT \
-../MCAL/GIE
+../MCAL/GIE \
+../MCAL/ADC
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -53,6 +54,7 @@ C_SRCS +=  \
 ../HAL/LED/LED.c \
 ../HAL/SevenSeg/SevenSeg.c \
 ../main.c \
+../MCAL/ADC/ADC.c \
 ../MCAL/DIO/DIO.c \
 ../MCAL/EXT/EXT.c \
 ../MCAL/GIE/GIE.c
@@ -71,6 +73,7 @@ HAL/LCD/LCD.o \
 HAL/LED/LED.o \
 HAL/SevenSeg/SevenSeg.o \
 main.o \
+MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
 MCAL/EXT/EXT.o \
 MCAL/GIE/GIE.o
@@ -82,6 +85,7 @@ HAL/LCD/LCD.o \
 HAL/LED/LED.o \
 HAL/SevenSeg/SevenSeg.o \
 main.o \
+MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
 MCAL/EXT/EXT.o \
 MCAL/GIE/GIE.o
@@ -93,6 +97,7 @@ HAL/LCD/LCD.d \
 HAL/LED/LED.d \
 HAL/SevenSeg/SevenSeg.d \
 main.d \
+MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
 MCAL/EXT/EXT.d \
 MCAL/GIE/GIE.d
@@ -104,6 +109,7 @@ HAL/LCD/LCD.d \
 HAL/LED/LED.d \
 HAL/SevenSeg/SevenSeg.d \
 main.d \
+MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
 MCAL/EXT/EXT.d \
 MCAL/GIE/GIE.d
@@ -158,6 +164,13 @@ HAL/SevenSeg/SevenSeg.o: ../HAL/SevenSeg/SevenSeg.c
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I".."  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/ADC/ADC.o: ../MCAL/ADC/ADC.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I".."  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

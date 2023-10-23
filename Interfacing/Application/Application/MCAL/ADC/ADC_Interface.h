@@ -11,7 +11,9 @@
 
 #include "ADC_CFG.h"
 #include "ADC_Private.h"
+#include "std_macros.h"
 
-
+void ADC_init(void);
+void ADC_read(uint8 channel, uint16 *Value);
 
 #endif /* ADC_INTERFACE_H_ */

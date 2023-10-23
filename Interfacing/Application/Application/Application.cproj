@@ -179,6 +179,18 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\ADC\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC\ADC_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC\ADC_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC\ADC_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\DIO\DIO.c">
       <SubType>compile</SubType>
     </Compile>
@@ -230,6 +242,7 @@
     <Folder Include="MCAL\DIO" />
     <Folder Include="MCAL\EXT" />
     <Folder Include="MCAL\GIE" />
+    <Folder Include="MCAL\ADC" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

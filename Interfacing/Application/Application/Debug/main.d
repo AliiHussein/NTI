@@ -12,7 +12,8 @@ main.d main.o: .././main.c .././std_macros.h \
  .././MCAL/DIO/DIO.h .././MCAL/EXT/EXT_Interface.h \
  .././MCAL/EXT/EXT_Private.h .././MCAL/EXT/EXT_CFG.h ../std_types.h \
  .././MCAL/GIE/GIE_Interface.h .././MCAL/GIE/GIE_Private.h \
- .././MCAL/GIE/GIE_CFG.h
+ .././MCAL/GIE/GIE_CFG.h .././MCAL/ADC/ADC_Interface.h \
+ .././MCAL/ADC/ADC_CFG.h .././MCAL/ADC/ADC_Private.h
 
 .././std_macros.h:
 
@@ -65,3 +66,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././MCAL/GIE/GIE_Private.h:
 
 .././MCAL/GIE/GIE_CFG.h:
+
+.././MCAL/ADC/ADC_Interface.h:
+
+.././MCAL/ADC/ADC_CFG.h:
+
+.././MCAL/ADC/ADC_Private.h:
