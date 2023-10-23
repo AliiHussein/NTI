@@ -16,60 +16,53 @@
 #include "MCAL/EXT/EXT_Interface.h"
 #include "MCAL/GIE/GIE_Interface.h"
 
-void toggle_Yellow(void){
-	led_toggle(portA, 6);
-	_delay_ms(100);
-}
+uint8 up_flag = 1;
 
-void toggle_Blue(void){
-	led_toggle(portA, 5);
-	_delay_ms(100);
-}
-
-void toggle_Green(void){
-	led_toggle(portA, 4);
-	_delay_ms(100);
-}
-
-void toggle_RED(void){
-	led_toggle(portB, 7);
-	_delay_ms(100);
+void reverse_count(void){
+	if(up_flag == 1){
+		up_flag = 0;
+	}
+	else{
+		up_flag = 1;
+	}
 }
 
 int main(void)
 {	
-	// Leds Initialization
-	led_init(portA, 6);
-	led_init(portA, 5);
-	led_init(portA, 4);
-	led_init(portB, 7);
-		
-	// EXT interrupt Initialization	
-	EXT_init(EXT0, FALLING);
-	EXT_init(EXT1, FALLING);
-	EXT_init(EXT2, FALLING);
-	EXT_callback(toggle_Blue, EXT0);
-	EXT_callback(toggle_RED, EXT1);
-	EXT_callback(toggle_Yellow, EXT2);
 	
-	// Button Init
-	button_init(portD, 7);
+	// 7 Segment Initialization
+	sevenseg_init();
+	
+	// EXT interrupt Initialization	
+	EXT_init(EXT1, FALLING);
+	EXT_callback(reverse_count, EXT1);
+
+
 	
 	// Global Interrupt Enabled
 	GIE_Enable();
 	
-	/*  
-		Button 1 -> PD7 :: normal button
-		Button 2 -> PD6 :: EXT0 -> PD2 
-		Button 3->  PD5 :: EXT2 -> PB2
-		Button 4 -> PD3 :: EXT1 -> PD3
-	
-	 */
+	uint32 count = 0;
+	uint32 temp;
 	
 	while(1){
-		if(!button_read(portD, 7)){
-			toggle_Green();
+		temp = count;
+		
+		sevenseg_write(temp%10, 1);
+		temp/=10;
+		sevenseg_write(temp%10, 2);
+		temp/=10;
+		sevenseg_write(temp%10, 3);
+		temp/=10;
+		sevenseg_write(temp%10, 4);
+		
+		if(up_flag){
+			count++;
 		}
+		else{
+			count--;
+		}
+				
 	}
     
 }
