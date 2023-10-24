@@ -18,16 +18,60 @@
 #include "MCAL/ADC/ADC_Interface.h"
 
 int main(void)
-{	
-	led_init(portD, 5);
-	led_on(portD, 5);	
+{
+	/*
+	ADC_init();
+	LCD_init();
+
+	uint16 val;
+	uint16 volt;
+	uint16 temp; // 1C -> 10 mV
+	
+	LCD_write_command(0x80);
+	LCD_write_string("ADC= ");
+	LCD_write_command(0xc0);
+	LCD_write_string("Temp= ");
 	
 	while(1){
+		// Get ADC value
+		ADC_read(A1, &val);
 		
+		// Volt equation
+		volt = (5000UL*val) / 1024;
 		
+		// Temp equation
+		temp = volt/10;
+		
+		// Printing ADC value
+		LCD_write_command(0x86);
+		LCD_write_string("    ");
+		LCD_write_command(0x86);
+		LCD_write_number(val);
+		
+		// Printing Volt value
+		LCD_write_command(0xc6);
+		LCD_write_string("    ");
+		LCD_write_command(0xc6);
+		LCD_write_number(temp);
+
+		_delay_ms(200);
 		
 	}
-    
+	*/
+	LCD_init();
+	_delay_ms(1000);
+	//LCD_write_number(22);
+	float32 num = 12.5;
+	
+	while(1){
+		LCD_write_command(0x80);
+		LCD_write_float(num);
+		num = num + 0.5;
+		_delay_ms(1000);
+	}
+	
+	
+	
 }
 
 

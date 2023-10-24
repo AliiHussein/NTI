@@ -14,19 +14,20 @@ void ADC_init(void){
 	SETBIT(ADMUX, REFS0); 
 	CLRBIT(ADMUX, REFS1); 
 	// 3. Right adjustment +
-	//CLRBIT(ADMUX, ADLAR);
+	CLRBIT(ADMUX, ADLAR);
 	// 4. Prescaler -> 128
 	ADCSRA |= 0b111;
 	// 5. Disable interrupt +
-	//CLRBIT(ADCSRA, ADIE);
+	CLRBIT(ADCSRA, ADIE);
 	// 6. Clear ADC flag by setting it +
-	//SETBIT(ADCSRA, ADIF);
+	SETBIT(ADCSRA, ADIF);
 	// 7. Enable ADC
 	SETBIT(ADCSRA, ADEN);
 	
 }
 
 void ADC_read(uint8 channel, uint16 *Value){
+	
 	// 1. Select channel
 	ADMUX &= 0b11100000;
 	ADMUX |= channel;
@@ -34,9 +35,22 @@ void ADC_read(uint8 channel, uint16 *Value){
 	SETBIT(ADCSRA, ADSC);
 	// Wait for flag
 	while(READBIT(ADCSRA, ADSC));
-	// clear flag
-	//SETBIT(ADCSRA, ADIF);
 	// return data
 	*Value = ADC;
+	
+	/*
+	// 1. Select channel
+	ADMUX &= 0b11100000;
+	ADMUX |= channel;
+	// 2. Start conversion
+	SETBIT(ADCSRA, ADSC);
+	
+	while(!READBIT(ADCSRA, ADIF));
+	
+	SETBIT(ADCSRA, ADIF);
+	
+	*Value = ADC;
+	*/
+	
 	
 }
