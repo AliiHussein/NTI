@@ -15,6 +15,10 @@
 
 void timer0_init(void);
 void timer0_callback(void (*PTR)(void));
-void enable_timer0_int(void);
+void timer0_int_enable(void);
+void timer0_delay_us(uint32);
+void timer0_delay_ms(uint32);
+void timer0_delay_s(uint32);
+void timer0_disable(void);
 
 #endif /* TIMER0_INTERFACE_H_ */

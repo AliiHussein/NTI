@@ -18,20 +18,6 @@
 #include "MCAL/GIE/GIE_Interface.h"
 #include "MCAL/ADC/ADC_Interface.h"
 #include "MCAL/Timer0/Timer0_Interface.h"
-uint16 C=200;
-void toggle_led(void){
-	static uint16 counts = 0;
-	
-	
-	if(counts == 7812){
-		
-		led_toggle(portA, 5);
-		counts = 0;
-	}
-	counts++;
-	C=counts;
-	
-}
 
 int main(void)
 {
@@ -39,24 +25,30 @@ int main(void)
 	LCD_init();
 	led_init(portA, 5);
 	
-	// Disable GIE
-	GIE_Disable();
-	
-	// Timer0 init
-	timer0_init();
-	timer0_callback(toggle_led);
-	enable_timer0_int();
-	
-	// Global Interrupt
-	GIE_Enable();
-	
 	LCD_write_string("Hello Nassif!");
 	
-	while (1)
-	{
-		LCD_write_command(0xc0);
-		LCD_write_number(C);
+	// Timer0 init
+	
+	
+	while(1){
+		led_on(portA, 5);
+		timer0_delay_us(1000000);
+		led_off(portA, 5);
+		timer0_delay_us(1000000);
+		
+		led_on(portA, 5);
+		timer0_delay_ms(1000);
+		led_off(portA, 5);
+		timer0_delay_ms(1000);
+		
+		led_on(portA, 5);
+		timer0_delay_us(1);
+		led_off(portA, 5);
+		timer0_delay_us(1);
+		
 	}
+	
+	
 }
 
 

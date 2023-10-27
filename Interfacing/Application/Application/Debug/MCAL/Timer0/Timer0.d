@@ -7,7 +7,8 @@ MCAL/Timer0/Timer0.d MCAL/Timer0/Timer0.o: ../MCAL/Timer0/Timer0.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../Bit_math.h ../std_types.h ../memMap.h ../MCAL/Timer0/Timer0_CFG.h \
- ../MCAL/Timer0/Timer0_Interface.h ../MCAL/Timer0/Timer0_Private.h
+ ../MCAL/Timer0/Timer0_Interface.h ../MCAL/Timer0/Timer0_Private.h \
+ ../HAL/LCD/LCD.h
 
 ../Bit_math.h:
 
@@ -38,3 +39,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../MCAL/Timer0/Timer0_Interface.h:
 
 ../MCAL/Timer0/Timer0_Private.h:
+
+../HAL/LCD/LCD.h:
