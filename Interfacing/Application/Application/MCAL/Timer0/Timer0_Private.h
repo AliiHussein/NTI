@@ -41,5 +41,8 @@
 #define OCF0  1
 #define TOV0  0
 
+#define OCR0 *((volatile uint8 *)0x5C)
+
+
 
 #endif /* TIMER0_PRIVATE_H_ */

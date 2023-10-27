@@ -14,8 +14,6 @@
 #include "Timer0_Private.h"
 #include "HAL/LCD/LCD.h"
 
-// Prescaler = 8, 64
-// Toggle led for 1 second
 void (*ptr_t0)(void) = NULL;
 
 void timer0_init(void){
@@ -33,6 +31,22 @@ void timer0_init(void){
 	
 }
 
+void timer0_CTC_init(uint8 Value){
+	// reset TCNT0
+	TCNT0 = 0;
+	// FOC0 = 1
+	//SETBIT(TCCR0, FOC0);
+	// CTC Mode
+	SETBIT(TCCR0, WGM01); CLRBIT(TCCR0, WGM00);
+	// OCR0 Value
+	OCR0 = Value;
+	/* 
+	Prescaler = CLK/8 =>  CS02 = 0, CS01 = 1, CS00 = 0 (Chosen)
+	Prescaler = CLK/16 =>  CS02 = 0, CS01 = 1, CS00 = 1
+	*/
+	CLRBIT(TCCR0, CS02); SETBIT(TCCR0, CS01); CLRBIT(TCCR0, CS00);	
+}
+
 void timer0_callback(void (*PTR)(void)){
 	ptr_t0 = PTR;
 }
@@ -40,6 +54,11 @@ void timer0_callback(void (*PTR)(void)){
 void timer0_int_enable(void){
 	// Enable timer from TIMSK
 	SETBIT(TIMSK, TOIE0);
+}
+
+void timer0_int_CTC_enable(void){
+	// Enable CTC timer from TIMSK
+	SETBIT(TIMSK, OCIE0);
 }
 
 void timer0_disable(void){
@@ -124,12 +143,19 @@ void __vector_11(){
 	ptr_t0();
 }
 
+void __vector_10() __attribute__((signal));
+
+void __vector_10(){
+	ptr_t0();
+}
+
 /*
-Toggle led for 1 second
-Freq = 16Mhz
-Tick time = Prescaler / Freq = 8 / 16Mhz = 1 / 2Mhz
-Time ovf = Tick Time * 256 = 0.000128
-Overflows count = 7812.5
-0.5 * 256 = 128 (Start TCNT0 from 128)
+
+Q: Toggle led for 1 second
+1. Freq = 16Mhz
+2. Tick time = Prescaler / Freq = 8 / 16Mhz = 1 / 2Mhz
+3. Time ovf = Tick Time * 256 = 0.000128
+4. Overflows count = RequiredTime/Time OVF =  7812.5
+5. To get the decimal: 0.5 * 256 = 128 (Start TCNT0 from 128)
  
 */

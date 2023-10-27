@@ -14,8 +14,10 @@
 // Enable interrupt
 
 void timer0_init(void);
+void timer0_CTC_init(uint8);
 void timer0_callback(void (*PTR)(void));
 void timer0_int_enable(void);
+void timer0_int_CTC_enable(void);
 void timer0_delay_us(uint32);
 void timer0_delay_ms(uint32);
 void timer0_delay_s(uint32);
