@@ -63,10 +63,9 @@ void timer0_delay_us(uint32 microseconds){
 	
 	
 	for(int i = 0; i < counts;){
-		if(READBIT(TIFR,TOV0) == 1){
-			i++;
-			SETBIT(TIFR,TOV0);
-		}
+		while(READBIT(TIFR,TOV0) == 0);
+		i++;
+		SETBIT(TIFR,TOV0);
 	}
 	
 	timer0_disable();
@@ -87,10 +86,9 @@ void timer0_delay_ms(uint32 milliseconds){
 	
 	
 	for(int i = 0; i < counts;){
-		if(READBIT(TIFR,TOV0) == 1){
-			i++;
-			SETBIT(TIFR,TOV0);
-		}
+		while(READBIT(TIFR,TOV0) == 0);
+		i++;
+		SETBIT(TIFR,TOV0);
 	}
 	
 	timer0_disable();
@@ -111,10 +109,10 @@ void timer0_delay_s(uint32 seconds){
 	
 	
 	for(int i = 0; i < counts;){
-		if(READBIT(TIFR,TOV0) == 1){
-			i++;
-			SETBIT(TIFR,TOV0);
-		}
+		while(READBIT(TIFR,TOV0) == 0);
+		i++;
+		SETBIT(TIFR,TOV0);
+		
 	}
 	
 	timer0_disable();
