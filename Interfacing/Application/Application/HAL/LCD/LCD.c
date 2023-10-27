@@ -139,8 +139,8 @@ void LCD_write_string(uint8 * str){
 }
 
 void LCD_write_float(float32 num){
-	uint32 dec = (uint32)(num * 10);
-	dec = dec%10;
+	uint32 dec = (uint32)(num * 100);
+	dec = dec%100;
 	uint32 int_num = (uint32)num;
 	LCD_write_number(int_num);
 	LCD_write_char('.');
