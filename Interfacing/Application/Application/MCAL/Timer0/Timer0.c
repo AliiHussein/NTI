@@ -16,49 +16,69 @@
 
 void (*ptr_t0)(void) = NULL;
 
-void timer0_init(void){
+void timer0_init(uint8 mode, uint8 prescaler, uint8 iSInterrupt, uint8 Compare_mode){
 	// reset TCNT0
 	TCNT0 = 0;
-	// FOC0 = 1
-	//SETBIT(TCCR0, FOC0);
-	// Normal Mode
-	CLRBIT(TCCR0, WGM01); CLRBIT(TCCR0, WGM00);
-	/* 
-	Prescaler = CLK/8 =>  CS02 = 0, CS01 = 1, CS00 = 0 (Chosen)
-	Prescaler = CLK/16 =>  CS02 = 0, CS01 = 1, CS00 = 1
-	*/
-	CLRBIT(TCCR0, CS02); SETBIT(TCCR0, CS01); CLRBIT(TCCR0, CS00);	
+	// Select Mode
+	switch(mode){
+		case NORMAL:   CLRBIT(TCCR0, WGM01); CLRBIT(TCCR0, WGM00); break;
+		case PWM_PC:   CLRBIT(TCCR0, WGM01); SETBIT(TCCR0, WGM00); break;
+		case CTC:      SETBIT(TCCR0, WGM01); CLRBIT(TCCR0, WGM00); break;
+		case PWM_FAST: SETBIT(TCCR0, WGM01); SETBIT(TCCR0, WGM00); break;
+	}
+	// Choose Inverted or Non-inverted
+	if(mode == PWM_FAST || mode == PWM_PC){
+		SETBIT(DDRB,3);    // OC0 output
+		switch(Compare_mode){
+			case NON_INVERTED: SETBIT(TCCR0, COM01); CLRBIT(TCCR0, COM00); break;
+			case INVERTED:     SETBIT(TCCR0, COM01); SETBIT(TCCR0, COM00); break;
+		}
+	}
+	
+	// Select Prescaler
+	switch(prescaler){
+		case P1:    CLRBIT(TCCR0, CS02); CLRBIT(TCCR0, CS01); SETBIT(TCCR0, CS00); break;
+		case P8:    CLRBIT(TCCR0, CS02); SETBIT(TCCR0, CS01); CLRBIT(TCCR0, CS00); break;
+		case P64:   CLRBIT(TCCR0, CS02); SETBIT(TCCR0, CS01); SETBIT(TCCR0, CS00); break;
+		case P256:  SETBIT(TCCR0, CS02); CLRBIT(TCCR0, CS01); CLRBIT(TCCR0, CS00); break;
+		case P1024: SETBIT(TCCR0, CS02); CLRBIT(TCCR0, CS01); SETBIT(TCCR0, CS00); break;
+	}
+	
+	// Enable Interrupt
+	if(iSInterrupt == INTERUPT_ON){
+		switch(mode){
+			case NORMAL: SETBIT(TIMSK, TOIE0); break;
+			case CTC:    SETBIT(TIMSK, OCIE0); break;
+		}
+		
+	}	
 	
 }
 
-void timer0_CTC_init(uint8 Value){
-	// reset TCNT0
-	TCNT0 = 0;
-	// FOC0 = 1
-	//SETBIT(TCCR0, FOC0);
-	// CTC Mode
-	SETBIT(TCCR0, WGM01); CLRBIT(TCCR0, WGM00);
+void PWM0_OC0_duty(uint8 duty_cycle){
+	if(duty_cycle > 100){
+		duty_cycle = 100;
+	}
+	
+	if(duty_cycle < 0){
+		duty_cycle = 0;
+	}
+	
+	OCR0 = duty_cycle * 2.55;
+}
+
+void timer0_setOCR(uint8 Value){
 	// OCR0 Value
-	OCR0 = Value;
-	/* 
-	Prescaler = CLK/8 =>  CS02 = 0, CS01 = 1, CS00 = 0 (Chosen)
-	Prescaler = CLK/16 =>  CS02 = 0, CS01 = 1, CS00 = 1
-	*/
-	CLRBIT(TCCR0, CS02); SETBIT(TCCR0, CS01); CLRBIT(TCCR0, CS00);	
+	OCR0 = Value;	
+}
+
+void timer0_setTCNT0(uint8 Value){
+	// OCR0 Value
+	TCNT0 = Value;
 }
 
 void timer0_callback(void (*PTR)(void)){
 	ptr_t0 = PTR;
-}
-
-void timer0_int_enable(void){
-	// Enable timer from TIMSK
-	SETBIT(TIMSK, TOIE0);
-}
-
-void timer0_int_CTC_enable(void){
-	// Enable CTC timer from TIMSK
-	SETBIT(TIMSK, OCIE0);
 }
 
 void timer0_disable(void){
@@ -67,7 +87,7 @@ void timer0_disable(void){
 
 
 void timer0_delay_us(uint32 microseconds){
-	timer0_init();
+	timer0_init(NORMAL, P8, INTERUPT_OFF, COMPARE_MODE_OFF);
 	
 	uint32 freq = 16000000;
 	uint32 Prescaler = 8*2000000;
@@ -90,7 +110,7 @@ void timer0_delay_us(uint32 microseconds){
 	timer0_disable();
 }
 void timer0_delay_ms(uint32 milliseconds){
-	timer0_init();
+	timer0_init(NORMAL, P8, INTERUPT_OFF, COMPARE_MODE_OFF);
 	
 	uint32 freq = 16000000;
 	uint32 Prescaler = 8*2000000;
@@ -113,7 +133,7 @@ void timer0_delay_ms(uint32 milliseconds){
 	timer0_disable();
 }
 void timer0_delay_s(uint32 seconds){
-	timer0_init();
+	timer0_init(NORMAL, P8, INTERUPT_OFF, COMPARE_MODE_OFF);
 	
 	uint32 freq = 16000000;
 	uint32 Prescaler = 8*2000000;
