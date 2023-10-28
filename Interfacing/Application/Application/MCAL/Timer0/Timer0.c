@@ -55,7 +55,7 @@ void timer0_init(uint8 mode, uint8 prescaler, uint8 iSInterrupt, uint8 Compare_m
 	
 }
 
-void PWM0_OC0_duty(uint8 duty_cycle){
+void PWM0_OC0_duty(uint8 duty_cycle, uint8 mode, uint8 Compare_mode){
 	if(duty_cycle > 100){
 		duty_cycle = 100;
 	}
@@ -64,7 +64,14 @@ void PWM0_OC0_duty(uint8 duty_cycle){
 		duty_cycle = 0;
 	}
 	
-	OCR0 = duty_cycle * 2.55;
+	if(mode == PWM_FAST && Compare_mode == NON_INVERTED){
+		OCR0 = duty_cycle * 2.55;
+	}
+	else if(mode == PWM_FAST && Compare_mode == INVERTED){
+		OCR0 = 255 - duty_cycle * 2.55;
+	}
+	
+	
 }
 
 void timer0_setOCR(uint8 Value){

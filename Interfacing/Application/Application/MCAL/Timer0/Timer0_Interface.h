@@ -14,7 +14,7 @@
 // Enable interrupt
 
 void timer0_init(uint8 mode, uint8 prescaler, uint8 iSInterrupt, uint8 Compare_mode);
-void PWM0_OC0_duty(uint8 duty_cycle);
+void PWM0_OC0_duty(uint8 duty_cycle, uint8 mode, uint8 Compare_mode);
 void timer0_setOCR(uint8 Value);
 void timer0_setTCNT0(uint8 Value);
 void timer0_callback(void (*PTR)(void));

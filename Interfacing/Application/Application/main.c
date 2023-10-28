@@ -29,14 +29,16 @@ int main(void)
 	uint8 duty = 0;
 	
 	GIE_Disable();
-	PWM0_OC0_duty(duty);
-	timer0_init(PWM_FAST, P8, INTERUPT_OFF, NON_INVERTED);
+	PWM0_OC0_duty(duty, PWM_FAST, INVERTED);
+	timer0_init(PWM_PC, P8, INTERUPT_OFF, INVERTED);
 	GIE_Enable();
 	
 	LCD_write_command(0x80);
 	LCD_write_string("Duty= ");
 	LCD_write_command(0x86);
 	LCD_write_number(duty);
+	LCD_write_command(0x89);
+	LCD_write_string("%");
 		
 	while (1)
 	{
@@ -44,8 +46,10 @@ int main(void)
 			duty += 10;
 			if(duty == 110){
 				duty = 0;
+				LCD_write_command(0x86);
+				LCD_write_string("   ");
 			}
-			PWM0_OC0_duty(duty);
+			PWM0_OC0_duty(duty, PWM_FAST, INVERTED);
 			LCD_write_command(0x86);
 			LCD_write_number(duty);
 			_delay_ms(300);
