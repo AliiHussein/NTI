@@ -28,6 +28,8 @@ void wdt_enable(uint8 Time){
 	SETBIT(WDTCR, WDE);
 }
 void wdt_disable(void){
-	SETBIT(WDTCR, WDE); SETBIT(WDTCR, WDTOE);
+	// Writing logic one to WDTOE & WDE at the same time
+	WDTCR |= (1<<WDTOE) | (1<<WDE);
+	// Writing zero to WDE
 	WDTCR = 0;
 }
