@@ -25,6 +25,7 @@ int main(void)
 	LCD_init();
 	button_init(portD, 7);
 	led_init(portA, 5);
+	ADC_init();
 	
 	uint8 duty = 0;
 	
