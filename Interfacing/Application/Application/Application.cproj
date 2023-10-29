@@ -233,6 +233,18 @@
     <Compile Include="MCAL\Timer0\Timer0_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\WDT\WDT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\WDT\WDT_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\WDT\WDT_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\WDT\WDT_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="memMap.h">
       <SubType>compile</SubType>
     </Compile>
@@ -255,6 +267,7 @@
     <Folder Include="MCAL\EXT" />
     <Folder Include="MCAL\GIE" />
     <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\WDT" />
     <Folder Include="MCAL\Timer0" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

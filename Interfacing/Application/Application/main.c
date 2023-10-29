@@ -18,91 +18,67 @@
 #include "MCAL/GIE/GIE_Interface.h"
 #include "MCAL/ADC/ADC_Interface.h"
 #include "MCAL/Timer0/Timer0_Interface.h"
+#include "MCAL/WDT/WDT_Interface.h"
+
+
+
+void toggle_led_yel(void){
+	led_toggle(portA, 6);
+	_delay_ms(1000);
+}
+
+void toggle_led_blue(void){
+	led_toggle(portA, 5);
+	_delay_ms(1000);
+}
+
+void toggle_led_green(void){
+	led_toggle(portA, 4);
+	_delay_ms(1000);
+}
+
+void toggle_led_red(void){
+	led_toggle(portB, 7);
+	_delay_ms(1000);
+}
 
 int main(void)
 {
-	// Init led
-	LCD_init();
-	button_init(portD, 7);
+	led_init(portA, 4);
 	led_init(portA, 5);
-	ADC_init();
+	led_init(portA, 6);
+	led_init(portB, 7);
 	
-	uint8 duty = 0;
+	led_off(portA, 4);
+	led_off(portA, 5);
+	led_off(portA, 6);
+	led_off(portB, 7);
 	
-	GIE_Disable();
-	PWM0_OC0_duty(duty, PWM_FAST, INVERTED);
-	timer0_init(PWM_PC, P8, INTERUPT_OFF, INVERTED);
-	GIE_Enable();
 	
-	LCD_write_command(0x80);
-	LCD_write_string("Duty= ");
-	LCD_write_command(0x86);
-	LCD_write_number(duty);
-	LCD_write_command(0x89);
-	LCD_write_string("%");
 		
 	while (1)
 	{
-		if(!button_read(portD, 7)){
-			duty += 10;
-			if(duty == 110){
-				duty = 0;
-				LCD_write_command(0x86);
-				LCD_write_string("   ");
-			}
-			PWM0_OC0_duty(duty, PWM_FAST, INVERTED);
-			LCD_write_command(0x86);
-			LCD_write_number(duty);
-			_delay_ms(300);
-		}
+		wdt_enable(T2_1_s);
+		toggle_led_blue();
+		wdt_disable();
+		
+		wdt_enable(T2_1_s);
+		toggle_led_yel();
+		wdt_disable();
+		
+		wdt_enable(T2_1_s);
+		toggle_led_green();
+		wdt_disable();
+		
+		/*
+		wdt_enable(T2_1_s);
+		toggle_led_red();
+		wdt_disable();
+		*/
+		
 		
 	}
 }
-
-/*
-
-PWM calculations
-
-f = 100 KHz
-T = 1/ 100k = 10 usecond
-
-@ 50%
-Ton = 5 usecond, toff = 5 usecond
-
-@ 25%
-Ton = 2.5 usecond, toff = 7.5 usecond
-
-@ 70 %
-Ton = 7 usecond, toff = 3 usecond
-
-***************************************
-
-Microcontroller timer
-Freq = 16 MHz
-Tick Time = Prescaler / Freq = 8 / 16MHz = 0.5 usecond
-Time OVF = 0.5 * 256 = 128 usecond
-
-@ 50%
-On overflow counts = 5 / 0.5 = 10 counts, off = 10 counts
-
-@ 25%
-on = 5 counts, off = 15 counts
-
-@ 70%
-on = 14 counts, off = 6 counts
-
-**************************************
-Pot
-
-20 count total
-
-on = duty * total count = 255 - 0.25 * 20 = 255 - 5 = 250
-off = 255 - (20 - on) = 240
-
-
-
-
-*/
 
 
 

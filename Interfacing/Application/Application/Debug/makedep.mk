@@ -24,3 +24,5 @@ MCAL\GIE\GIE.c
 
 MCAL\Timer0\Timer0.c
 
+MCAL\WDT\WDT.c
+
