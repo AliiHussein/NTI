@@ -14,7 +14,7 @@ main.d main.o: .././main.c .././std_macros.h \
  .././MCAL/GIE/GIE_Interface.h .././MCAL/GIE/GIE_Private.h \
  .././MCAL/GIE/GIE_CFG.h .././MCAL/ADC/ADC_Interface.h \
  .././MCAL/ADC/ADC_Private.h .././MCAL/Timer0/Timer0_Interface.h \
- .././MCAL/WDT/WDT_Interface.h
+ .././MCAL/WDT/WDT_Interface.h .././MCAL/UART/UART_Interface.h
 
 .././std_macros.h:
 
@@ -75,3 +75,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././MCAL/Timer0/Timer0_Interface.h:
 
 .././MCAL/WDT/WDT_Interface.h:
+
+.././MCAL/UART/UART_Interface.h:

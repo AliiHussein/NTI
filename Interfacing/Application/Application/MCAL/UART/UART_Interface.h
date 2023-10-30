@@ -10,7 +10,8 @@
 #define UART_INTERFACE_H_
 
 
-
-
+void Uart_init(void);
+void Uart_Transmit(uint8 Value);
+void Uart_Receive(uint8 * Value);
 
 #endif /* UART_INTERFACE_H_ */

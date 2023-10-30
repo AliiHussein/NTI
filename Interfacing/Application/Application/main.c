@@ -19,79 +19,24 @@
 #include "MCAL/ADC/ADC_Interface.h"
 #include "MCAL/Timer0/Timer0_Interface.h"
 #include "MCAL/WDT/WDT_Interface.h"
-
-
-
-void toggle_led_yel(void){
-	_delay_ms(500);
-	led_on(portA, 6);
-	_delay_ms(500);
-	led_off(portA, 6);
-	
-}
-
-void toggle_led_blue(void){
-	_delay_ms(500);
-	led_on(portA, 5);
-	_delay_ms(500);
-	led_off(portA, 5);
-	
-}
-
-void toggle_led_green(void){
-	_delay_ms(3000);
-	led_on(portA, 4);
-	_delay_ms(500);
-	led_off(portA, 4);
-	
-}
-
-void toggle_led_red(void){
-	_delay_ms(500);
-	led_on(portB, 7);
-	_delay_ms(500);
-	led_off(portB, 7);
-	
-}
+#include "MCAL/UART/UART_Interface.h"
 
 int main(void)
 {
-	led_init(portA, 4);
-	led_init(portA, 5);
-	led_init(portA, 6);
-	led_init(portB, 7);
 	
-	/*
-	led_off(portA, 4);
-	led_off(portA, 5);
-	led_off(portA, 6);
-	led_off(portB, 7);
-	*/
-	//_delay_ms(500);
+	Uart_init();
+	LCD_init();
 	
-		
+	uint8 data;
 	while (1)
 	{
-		wdt_enable(T2_1_s);
-		toggle_led_yel();
-		wdt_disable();
+		Uart_Receive(&data);
 		
-		wdt_enable(T2_1_s);
-		toggle_led_blue();
-		wdt_disable();
+		LCD_write_char(data);
 		
-		
-		
-		wdt_enable(T2_1_s);
-		toggle_led_green();
-		wdt_disable();
-		
-		/*
-		wdt_enable(T2_1_s);
-		toggle_led_red();
-		wdt_disable();
-		*/
-		
+		if(data == 127){
+			LCD_write_command(1);
+		}
 		
 	}
 }

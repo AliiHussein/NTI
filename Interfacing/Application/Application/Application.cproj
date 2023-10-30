@@ -233,6 +233,18 @@
     <Compile Include="MCAL\Timer0\Timer0_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\UART\UART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART\UART_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\WDT\WDT.c">
       <SubType>compile</SubType>
     </Compile>
@@ -267,6 +279,7 @@
     <Folder Include="MCAL\EXT" />
     <Folder Include="MCAL\GIE" />
     <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\UART" />
     <Folder Include="MCAL\WDT" />
     <Folder Include="MCAL\Timer0" />
   </ItemGroup>
