@@ -24,19 +24,9 @@
 int main(void)
 {
 	
-	Uart_init();
-	LCD_init();
+	LCD_init();	
 	
-	uint8 data;
-	while (1)
-	{
-		Uart_Receive(&data);
-		
-		LCD_write_char(data);
-		
-		if(data == 127){
-			LCD_write_command(1);
-		}
+	while(1){
 		
 	}
 }

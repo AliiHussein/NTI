@@ -221,6 +221,18 @@
     <Compile Include="MCAL\GIE\GIE_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\SPI\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\Timer0\Timer0.c">
       <SubType>compile</SubType>
     </Compile>
@@ -279,6 +291,7 @@
     <Folder Include="MCAL\EXT" />
     <Folder Include="MCAL\GIE" />
     <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\SPI" />
     <Folder Include="MCAL\UART" />
     <Folder Include="MCAL\WDT" />
     <Folder Include="MCAL\Timer0" />

@@ -22,6 +22,8 @@ MCAL\EXT\EXT.c
 
 MCAL\GIE\GIE.c
 
+MCAL\SPI\SPI.c
+
 MCAL\Timer0\Timer0.c
 
 MCAL\UART\UART.c
