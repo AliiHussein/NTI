@@ -21,56 +21,36 @@
 #include "MCAL/WDT/WDT_Interface.h"
 #include "MCAL/UART/UART_Interface.h"
 #include "MCAL/SPI/SPI_Interface.h"
+#include "MCAL/I2C/I2C_Interface.h"
 
 /* MASTER */
 int main(void)
 {
 	
 	LCD_init();
-	Uart_init();
-	LCD_write_string("REC : ");
+	//LCD_write_string("I2C Master");
+	LCD_write_string("HELP!");
+	
+	I2C_MASTER_INIT();
+	
+	uint8 count = 0;
+	
 	LCD_write_command(0xc0);
-	LCD_write_string("SENT: ");
+	LCD_write_string("Sent: ");
 	
-	SPI_master_init();
 	
-	// leds init
-	led_init(portA, 6);
-	led_init(portA, 5);
-	led_init(portA, 4);
-	led_init(portC, 6);
-
-	uint8 data = 0;
-	while (1)
-	{
-			Uart_Receive(&data);
-			LCD_write_command(0x86);
-			LCD_write_string("    ");
-			LCD_write_command(0x86);
-			LCD_write_number(data);
-			
-			switch(data){
-				case 'A':  break;
-				case 'B': led_toggle(portA, 6); break;
-				case 'C': led_toggle(portA, 5); break;
-				case 'D': led_toggle(portA, 4); break;
-				case '1': led_toggle(portC, 6); break;
-			}
+	while(1){
+		I2C_Send_Start_Condition();
+		I2C_Send_Slave_Address_Write(0x02);
+		I2C_Send_Master_Send_Byte(count);
+		I2C_Send_Stop_Condition();
 		
-			SPI_send(data);
-			
-			
-			
-			LCD_write_command(0xc6);
-			LCD_write_string("   ");
-			LCD_write_command(0xc6);
-			LCD_write_number(data);
-			
-			
-			_delay_ms(1000);
+		LCD_write_command(0xc7);
+		LCD_write_number(count);
 		
+		count++;
 		
-		
+		_delay_ms(1000);
 		
 	}
 }

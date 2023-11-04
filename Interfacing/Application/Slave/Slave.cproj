@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>7.0</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.C</ToolchainName>
-    <ProjectGuid>{4685314e-e464-45df-a185-f4c7ef026a99}</ProjectGuid>
+    <ProjectGuid>{a9bdd36b-da8b-4537-af47-1f3d1dde7d51}</ProjectGuid>
     <avrdevice>ATmega32</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
@@ -132,6 +132,7 @@
     <Folder Include="MCAL\DIO\" />
     <Folder Include="MCAL\EXT\" />
     <Folder Include="MCAL\GIE\" />
+    <Folder Include="MCAL\I2C\" />
     <Folder Include="MCAL\SPI\" />
     <Folder Include="MCAL\Timer0\" />
     <Folder Include="MCAL\UART\" />
@@ -223,6 +224,18 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\GIE\GIE_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C_Private.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\SPI\SPI.c">

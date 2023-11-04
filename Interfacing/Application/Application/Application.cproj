@@ -221,6 +221,18 @@
     <Compile Include="MCAL\GIE\GIE_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\I2C\I2C.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C_CFG.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\I2C\I2C_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\SPI\SPI.c">
       <SubType>compile</SubType>
     </Compile>
@@ -291,6 +303,7 @@
     <Folder Include="MCAL\EXT" />
     <Folder Include="MCAL\GIE" />
     <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\I2C" />
     <Folder Include="MCAL\SPI" />
     <Folder Include="MCAL\UART" />
     <Folder Include="MCAL\WDT" />

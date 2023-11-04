@@ -20,7 +20,7 @@ void SPI_master_init(void){
 	 // 1. SPI Enable
 	 SETBIT(temp_SPCR, SPE);
 	 // 2. Data order -> LSB first
-	 //SETBIT(temp_SPCR, DORD);
+	 SETBIT(temp_SPCR, DORD);
 	 // 3. Master select
 	 SETBIT(temp_SPCR, MSTR);
 	 // 4. Clock Polarity & Phase (0, 0)
@@ -38,7 +38,7 @@ void SPI_slave_init(void){
 	// 1. SPI Enable
 	SETBIT(temp_SPCR, SPE);
 	// 2. Data order -> LSB first
-	//SETBIT(temp_SPCR, DORD);
+	SETBIT(temp_SPCR, DORD);
 	// 3. Master select
 	CLRBIT(temp_SPCR, MSTR);
 	// 4. Clock Polarity & Phase (0, 0)
@@ -50,10 +50,14 @@ void SPI_slave_init(void){
 }
 
 void SPI_send(uint8 value){
+	// 0. SS low
+	CLRBIT(PORTB, 4);
 	// 1. Start transmission
 	SPDR = value;
 	// 2. wait
 	while(READBIT(SPSR, SPIF) == 0);
+	uint8 val = SPDR;
+	SETBIT(PORTB, 4);
 }
 
 void SPI_recieve(uint8 * value){
