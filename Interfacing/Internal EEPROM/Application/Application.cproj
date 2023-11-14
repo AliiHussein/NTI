@@ -188,6 +188,12 @@
     <Compile Include="HAL\SevenSeg\SevenSeg_CFG.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\ULTRASONIC\Ultrasonic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\ULTRASONIC\Ultrasonic.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -281,6 +287,15 @@
     <Compile Include="MCAL\Timer0\Timer0_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\Timer1\TIMER1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer1\TIMER1_Interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\Timer1\TIMER1_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\TWI\TWI_Config.h">
       <SubType>compile</SubType>
     </Compile>
@@ -334,6 +349,7 @@
     <Folder Include="HAL\LCD" />
     <Folder Include="HAL\LED" />
     <Folder Include="HAL\EXT_T_EEPROM" />
+    <Folder Include="HAL\ULTRASONIC" />
     <Folder Include="HAL\SevenSeg" />
     <Folder Include="MCAL" />
     <Folder Include="MCAL\DIO" />
@@ -342,6 +358,7 @@
     <Folder Include="MCAL\ADC" />
     <Folder Include="MCAL\I2C" />
     <Folder Include="MCAL\EEPROM" />
+    <Folder Include="MCAL\Timer1" />
     <Folder Include="MCAL\TWI" />
     <Folder Include="MCAL\SPI" />
     <Folder Include="MCAL\UART" />

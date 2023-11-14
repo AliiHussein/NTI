@@ -9,7 +9,7 @@
 #ifndef STD_MACROS_H_
 #define STD_MACROS_H_
 
-#define F_CPU 16000000
+#define F_CPU 8000000
 #include <util/delay.h>
 #include "Bit_math.h"
 #include "std_types.h"

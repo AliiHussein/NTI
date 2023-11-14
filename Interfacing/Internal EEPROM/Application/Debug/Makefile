@@ -39,6 +39,7 @@ SUBDIRS :=  \
 ../HAL/LCD \
 ../HAL/LED \
 ../HAL/EXT_T_EEPROM \
+../HAL/ULTRASONIC \
 ../HAL/SevenSeg \
 ../MCAL \
 ../MCAL/DIO \
@@ -47,6 +48,7 @@ SUBDIRS :=  \
 ../MCAL/ADC \
 ../MCAL/I2C \
 ../MCAL/EEPROM \
+../MCAL/Timer1 \
 ../MCAL/TWI \
 ../MCAL/SPI \
 ../MCAL/UART \
@@ -62,6 +64,7 @@ C_SRCS +=  \
 ../HAL/LCD/LCD.c \
 ../HAL/LED/LED.c \
 ../HAL/SevenSeg/SevenSeg.c \
+../HAL/ULTRASONIC/Ultrasonic.c \
 ../main.c \
 ../MCAL/ADC/ADC.c \
 ../MCAL/DIO/DIO.c \
@@ -71,6 +74,7 @@ C_SRCS +=  \
 ../MCAL/I2C/I2C.c \
 ../MCAL/SPI/SPI.c \
 ../MCAL/Timer0/Timer0.c \
+../MCAL/Timer1/TIMER1.c \
 ../MCAL/TWI/TWI_prog.c \
 ../MCAL/UART/UART.c \
 ../MCAL/WDT/WDT.c
@@ -89,6 +93,7 @@ HAL/KEYPAD/KEYPAD.o \
 HAL/LCD/LCD.o \
 HAL/LED/LED.o \
 HAL/SevenSeg/SevenSeg.o \
+HAL/ULTRASONIC/Ultrasonic.o \
 main.o \
 MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
@@ -98,6 +103,7 @@ MCAL/GIE/GIE.o \
 MCAL/I2C/I2C.o \
 MCAL/SPI/SPI.o \
 MCAL/Timer0/Timer0.o \
+MCAL/Timer1/TIMER1.o \
 MCAL/TWI/TWI_prog.o \
 MCAL/UART/UART.o \
 MCAL/WDT/WDT.o
@@ -109,6 +115,7 @@ HAL/KEYPAD/KEYPAD.o \
 HAL/LCD/LCD.o \
 HAL/LED/LED.o \
 HAL/SevenSeg/SevenSeg.o \
+HAL/ULTRASONIC/Ultrasonic.o \
 main.o \
 MCAL/ADC/ADC.o \
 MCAL/DIO/DIO.o \
@@ -118,6 +125,7 @@ MCAL/GIE/GIE.o \
 MCAL/I2C/I2C.o \
 MCAL/SPI/SPI.o \
 MCAL/Timer0/Timer0.o \
+MCAL/Timer1/TIMER1.o \
 MCAL/TWI/TWI_prog.o \
 MCAL/UART/UART.o \
 MCAL/WDT/WDT.o
@@ -129,6 +137,7 @@ HAL/KEYPAD/KEYPAD.d \
 HAL/LCD/LCD.d \
 HAL/LED/LED.d \
 HAL/SevenSeg/SevenSeg.d \
+HAL/ULTRASONIC/Ultrasonic.d \
 main.d \
 MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
@@ -138,6 +147,7 @@ MCAL/GIE/GIE.d \
 MCAL/I2C/I2C.d \
 MCAL/SPI/SPI.d \
 MCAL/Timer0/Timer0.d \
+MCAL/Timer1/TIMER1.d \
 MCAL/TWI/TWI_prog.d \
 MCAL/UART/UART.d \
 MCAL/WDT/WDT.d
@@ -149,6 +159,7 @@ HAL/KEYPAD/KEYPAD.d \
 HAL/LCD/LCD.d \
 HAL/LED/LED.d \
 HAL/SevenSeg/SevenSeg.d \
+HAL/ULTRASONIC/Ultrasonic.d \
 main.d \
 MCAL/ADC/ADC.d \
 MCAL/DIO/DIO.d \
@@ -158,6 +169,7 @@ MCAL/GIE/GIE.d \
 MCAL/I2C/I2C.d \
 MCAL/SPI/SPI.d \
 MCAL/Timer0/Timer0.d \
+MCAL/Timer1/TIMER1.d \
 MCAL/TWI/TWI_prog.d \
 MCAL/UART/UART.d \
 MCAL/WDT/WDT.d
@@ -212,6 +224,13 @@ HAL/LED/LED.o: ../HAL/LED/LED.c
 	
 
 HAL/SevenSeg/SevenSeg.o: ../HAL/SevenSeg/SevenSeg.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I".."  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/ULTRASONIC/Ultrasonic.o: ../HAL/ULTRASONIC/Ultrasonic.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I".."  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -275,6 +294,13 @@ MCAL/SPI/SPI.o: ../MCAL/SPI/SPI.c
 	
 
 MCAL/Timer0/Timer0.o: ../MCAL/Timer0/Timer0.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I".."  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/Timer1/TIMER1.o: ../MCAL/Timer1/TIMER1.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I".."  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -14,6 +14,8 @@ HAL\LED\LED.c
 
 HAL\SevenSeg\SevenSeg.c
 
+HAL\ULTRASONIC\Ultrasonic.c
+
 main.c
 
 MCAL\ADC\ADC.c
@@ -31,6 +33,8 @@ MCAL\I2C\I2C.c
 MCAL\SPI\SPI.c
 
 MCAL\Timer0\Timer0.c
+
+MCAL\Timer1\TIMER1.c
 
 MCAL\TWI\TWI_prog.c
 
