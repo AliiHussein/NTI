@@ -107,6 +107,7 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .bss.c_flag    0x00000000        0x2 main.o
  .text          0x00000000        0x0 MCAL/ADC/ADC.o
  .data          0x00000000        0x0 MCAL/ADC/ADC.o
  .bss           0x00000000        0x0 MCAL/ADC/ADC.o
@@ -637,7 +638,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x14f0
+.text           0x00000000     0x14e6
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -748,115 +749,115 @@ END GROUP
                 0x0000050c                task1
  .text.task2    0x00000526       0x1a main.o
                 0x00000526                task2
- .text.task3    0x00000540       0x40 main.o
+ .text.task3    0x00000540       0x36 main.o
                 0x00000540                task3
- .text.main     0x00000580       0x66 main.o
-                0x00000580                main
+ .text.main     0x00000576       0x66 main.o
+                0x00000576                main
  .text.delay_ms
-                0x000005e6       0x2a MCAL/DELAY/DELAY.o
-                0x000005e6                delay_ms
+                0x000005dc       0x2a MCAL/DELAY/DELAY.o
+                0x000005dc                delay_ms
  .text.DIO_voidSetPinDirection
-                0x00000610       0xe8 MCAL/DIO/DIO.o
-                0x00000610                DIO_voidSetPinDirection
+                0x00000606       0xe8 MCAL/DIO/DIO.o
+                0x00000606                DIO_voidSetPinDirection
  .text.__vector_1
-                0x000006f8       0x4e MCAL/EXT/EXT.o
-                0x000006f8                __vector_1
+                0x000006ee       0x4e MCAL/EXT/EXT.o
+                0x000006ee                __vector_1
  .text.__vector_2
-                0x00000746       0x4e MCAL/EXT/EXT.o
-                0x00000746                __vector_2
+                0x0000073c       0x4e MCAL/EXT/EXT.o
+                0x0000073c                __vector_2
  .text.__vector_3
-                0x00000794       0x4e MCAL/EXT/EXT.o
-                0x00000794                __vector_3
+                0x0000078a       0x4e MCAL/EXT/EXT.o
+                0x0000078a                __vector_3
  .text.prvHeapInit
-                0x000007e2       0x36 RTOS/heap_2.o
+                0x000007d8       0x36 RTOS/heap_2.o
  .text.pvPortMalloc
-                0x00000818       0xf8 RTOS/heap_2.o
-                0x00000818                pvPortMalloc
+                0x0000080e       0xf8 RTOS/heap_2.o
+                0x0000080e                pvPortMalloc
  .text.vPortFree
-                0x00000910       0x66 RTOS/heap_2.o
-                0x00000910                vPortFree
+                0x00000906       0x66 RTOS/heap_2.o
+                0x00000906                vPortFree
  .text.vListInitialise
-                0x00000976       0x1c RTOS/list.o
-                0x00000976                vListInitialise
+                0x0000096c       0x1c RTOS/list.o
+                0x0000096c                vListInitialise
  .text.vListInitialiseItem
-                0x00000992        0x8 RTOS/list.o
-                0x00000992                vListInitialiseItem
+                0x00000988        0x8 RTOS/list.o
+                0x00000988                vListInitialiseItem
  .text.vListInsertEnd
-                0x0000099a       0x42 RTOS/list.o
-                0x0000099a                vListInsertEnd
+                0x00000990       0x42 RTOS/list.o
+                0x00000990                vListInsertEnd
  .text.vListInsert
-                0x000009dc       0x62 RTOS/list.o
-                0x000009dc                vListInsert
+                0x000009d2       0x62 RTOS/list.o
+                0x000009d2                vListInsert
  .text.uxListRemove
-                0x00000a3e       0x4c RTOS/list.o
-                0x00000a3e                uxListRemove
+                0x00000a34       0x4c RTOS/list.o
+                0x00000a34                uxListRemove
  .text.prvSetupTimerInterrupt
-                0x00000a8a       0x12 RTOS/port.o
+                0x00000a80       0x12 RTOS/port.o
  .text.pxPortInitialiseStack
-                0x00000a9c       0xd8 RTOS/port.o
-                0x00000a9c                pxPortInitialiseStack
+                0x00000a92       0xd8 RTOS/port.o
+                0x00000a92                pxPortInitialiseStack
  .text.xPortStartScheduler
-                0x00000b74       0x5e RTOS/port.o
-                0x00000b74                xPortStartScheduler
+                0x00000b6a       0x5e RTOS/port.o
+                0x00000b6a                xPortStartScheduler
  .text.vPortYield
-                0x00000bd2       0xb2 RTOS/port.o
-                0x00000bd2                vPortYield
+                0x00000bc8       0xb2 RTOS/port.o
+                0x00000bc8                vPortYield
  .text.vPortYieldFromTick
-                0x00000c84       0xb8 RTOS/port.o
-                0x00000c84                vPortYieldFromTick
+                0x00000c7a       0xb8 RTOS/port.o
+                0x00000c7a                vPortYieldFromTick
  .text.__vector_7
-                0x00000d3c        0x6 RTOS/port.o
-                0x00000d3c                __vector_7
+                0x00000d32        0x6 RTOS/port.o
+                0x00000d32                __vector_7
  .text.prvResetNextTaskUnblockTime
-                0x00000d42       0x3e RTOS/tasks.o
+                0x00000d38       0x3e RTOS/tasks.o
  .text.prvDeleteTCB
-                0x00000d80       0x1a RTOS/tasks.o
+                0x00000d76       0x1a RTOS/tasks.o
  .text.prvInitialiseNewTask
-                0x00000d9a       0xd6 RTOS/tasks.o
+                0x00000d90       0xd6 RTOS/tasks.o
  .text.prvInitialiseTaskLists
-                0x00000e70       0x66 RTOS/tasks.o
+                0x00000e66       0x66 RTOS/tasks.o
  .text.prvAddNewTaskToReadyList
-                0x00000ed6       0xb8 RTOS/tasks.o
+                0x00000ecc       0xb8 RTOS/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x00000f8e       0x88 RTOS/tasks.o
+                0x00000f84       0x88 RTOS/tasks.o
  .text.xTaskCreate
-                0x00001016       0xa8 RTOS/tasks.o
-                0x00001016                xTaskCreate
+                0x0000100c       0xa8 RTOS/tasks.o
+                0x0000100c                xTaskCreate
  .text.vTaskStartScheduler
-                0x000010be       0x54 RTOS/tasks.o
-                0x000010be                vTaskStartScheduler
+                0x000010b4       0x54 RTOS/tasks.o
+                0x000010b4                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00001112        0xc RTOS/tasks.o
-                0x00001112                vTaskSuspendAll
+                0x00001108        0xc RTOS/tasks.o
+                0x00001108                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x0000111e      0x174 RTOS/tasks.o
-                0x0000111e                xTaskIncrementTick
+                0x00001114      0x174 RTOS/tasks.o
+                0x00001114                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x00001292       0xe4 RTOS/tasks.o
-                0x00001292                xTaskResumeAll
+                0x00001288       0xe4 RTOS/tasks.o
+                0x00001288                xTaskResumeAll
  .text.vTaskDelay
-                0x00001376       0x2c RTOS/tasks.o
-                0x00001376                vTaskDelay
+                0x0000136c       0x2c RTOS/tasks.o
+                0x0000136c                vTaskDelay
  .text.prvCheckTasksWaitingTermination
-                0x000013a2       0x5c RTOS/tasks.o
+                0x00001398       0x5c RTOS/tasks.o
  .text.prvIdleTask
-                0x000013fe        0x6 RTOS/tasks.o
+                0x000013f4        0x6 RTOS/tasks.o
  .text.vTaskSwitchContext
-                0x00001404       0xa8 RTOS/tasks.o
-                0x00001404                vTaskSwitchContext
- .text.libgcc   0x000014ac        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x000014ac                __tablejump2__
+                0x000013fa       0xa8 RTOS/tasks.o
+                0x000013fa                vTaskSwitchContext
+ .text.libgcc   0x000014a2        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x000014a2                __tablejump2__
  .text.libgcc.mul
-                0x000014b8       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
-                0x000014b8                __muluhisi3
+                0x000014ae       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_muluhisi3.o)
+                0x000014ae                __muluhisi3
  .text.libgcc.mul
-                0x000014ce       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
-                0x000014ce                __umulhisi3
-                0x000014ec                . = ALIGN (0x2)
+                0x000014c4       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_umulhisi3.o)
+                0x000014c4                __umulhisi3
+                0x000014e2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000014ec        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000014ec                _exit
-                0x000014ec                exit
+ .fini9         0x000014e2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000014e2                _exit
+                0x000014e2                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -875,11 +876,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000014ec        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000014e2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000014f0                _etext = .
+                0x000014e6                _etext = .
 
-.data           0x00800060       0x1c load address 0x000014f0
+.data           0x00800060       0x1c load address 0x000014e6
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -897,74 +898,72 @@ END GROUP
                 0x0080007c                _edata = .
                 0x0080007c                PROVIDE (__data_end, .)
 
-.bss            0x0080007c      0x482
+.bss            0x0080007c      0x481
                 0x0080007c                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.count     0x0080007c        0x1 main.o
-                0x0080007c                count
- .bss.ptr_EXT3  0x0080007d        0x2 MCAL/EXT/EXT.o
-                0x0080007d                ptr_EXT3
- .bss.ptr_EXT2  0x0080007f        0x2 MCAL/EXT/EXT.o
-                0x0080007f                ptr_EXT2
- .bss.ptr_EXT1  0x00800081        0x2 MCAL/EXT/EXT.o
-                0x00800081                ptr_EXT1
+ .bss.ptr_EXT3  0x0080007c        0x2 MCAL/EXT/EXT.o
+                0x0080007c                ptr_EXT3
+ .bss.ptr_EXT2  0x0080007e        0x2 MCAL/EXT/EXT.o
+                0x0080007e                ptr_EXT2
+ .bss.ptr_EXT1  0x00800080        0x2 MCAL/EXT/EXT.o
+                0x00800080                ptr_EXT1
  .bss.xHeapHasBeenInitialised.2079
-                0x00800083        0x1 RTOS/heap_2.o
- .bss.xEnd      0x00800084        0x4 RTOS/heap_2.o
- .bss.xStart    0x00800088        0x4 RTOS/heap_2.o
- .bss.ucHeap    0x0080008c      0x3e8 RTOS/heap_2.o
+                0x00800082        0x1 RTOS/heap_2.o
+ .bss.xEnd      0x00800083        0x4 RTOS/heap_2.o
+ .bss.xStart    0x00800087        0x4 RTOS/heap_2.o
+ .bss.ucHeap    0x0080008b      0x3e8 RTOS/heap_2.o
  .bss.uxSchedulerSuspended
-                0x00800474        0x1 RTOS/tasks.o
+                0x00800473        0x1 RTOS/tasks.o
  .bss.xIdleTaskHandle
-                0x00800475        0x2 RTOS/tasks.o
+                0x00800474        0x2 RTOS/tasks.o
  .bss.xNextTaskUnblockTime
-                0x00800477        0x2 RTOS/tasks.o
+                0x00800476        0x2 RTOS/tasks.o
  .bss.uxTaskNumber
-                0x00800479        0x1 RTOS/tasks.o
+                0x00800478        0x1 RTOS/tasks.o
  .bss.xNumOfOverflows
-                0x0080047a        0x1 RTOS/tasks.o
+                0x00800479        0x1 RTOS/tasks.o
  .bss.xYieldPending
-                0x0080047b        0x1 RTOS/tasks.o
+                0x0080047a        0x1 RTOS/tasks.o
  .bss.uxPendedTicks
-                0x0080047c        0x1 RTOS/tasks.o
+                0x0080047b        0x1 RTOS/tasks.o
  .bss.xSchedulerRunning
-                0x0080047d        0x1 RTOS/tasks.o
+                0x0080047c        0x1 RTOS/tasks.o
  .bss.uxTopReadyPriority
-                0x0080047e        0x1 RTOS/tasks.o
+                0x0080047d        0x1 RTOS/tasks.o
  .bss.xTickCount
-                0x0080047f        0x2 RTOS/tasks.o
+                0x0080047e        0x2 RTOS/tasks.o
  .bss.uxCurrentNumberOfTasks
-                0x00800481        0x1 RTOS/tasks.o
+                0x00800480        0x1 RTOS/tasks.o
  .bss.uxDeletedTasksWaitingCleanUp
-                0x00800482        0x1 RTOS/tasks.o
+                0x00800481        0x1 RTOS/tasks.o
  .bss.xTasksWaitingTermination
-                0x00800483        0x9 RTOS/tasks.o
+                0x00800482        0x9 RTOS/tasks.o
  .bss.xPendingReadyList
-                0x0080048c        0x9 RTOS/tasks.o
+                0x0080048b        0x9 RTOS/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x00800495        0x2 RTOS/tasks.o
+                0x00800494        0x2 RTOS/tasks.o
  .bss.pxDelayedTaskList
-                0x00800497        0x2 RTOS/tasks.o
+                0x00800496        0x2 RTOS/tasks.o
  .bss.xDelayedTaskList2
-                0x00800499        0x9 RTOS/tasks.o
+                0x00800498        0x9 RTOS/tasks.o
  .bss.xDelayedTaskList1
-                0x008004a2        0x9 RTOS/tasks.o
+                0x008004a1        0x9 RTOS/tasks.o
  .bss.pxReadyTasksLists
-                0x008004ab       0x51 RTOS/tasks.o
+                0x008004aa       0x51 RTOS/tasks.o
  .bss.pxCurrentTCB
-                0x008004fc        0x2 RTOS/tasks.o
-                0x008004fc                pxCurrentTCB
+                0x008004fb        0x2 RTOS/tasks.o
+                0x008004fb                pxCurrentTCB
  *(COMMON)
-                0x008004fe                PROVIDE (__bss_end, .)
-                0x000014f0                __data_load_start = LOADADDR (.data)
-                0x0000150c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x008004fd                PROVIDE (__bss_end, .)
+                0x000014e6                __data_load_start = LOADADDR (.data)
+                0x00001502                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008004fe        0x0
+.noinit         0x008004fd        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008004fe                _end = .
+                0x008004fd                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -1067,50 +1066,50 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x38d7
+.debug_info     0x00000000     0x3909
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x40b HAL/LCD/LCD.o
  .debug_info    0x000008f1      0x225 HAL/LED/LED.o
  .debug_info    0x00000b16      0x1d6 HAL/SevenSeg/SevenSeg.o
- .debug_info    0x00000cec      0x3e5 main.o
- .debug_info    0x000010d1      0x179 MCAL/DELAY/DELAY.o
- .debug_info    0x0000124a      0x20e MCAL/DIO/DIO.o
- .debug_info    0x00001458      0x250 MCAL/EXT/EXT.o
- .debug_info    0x000016a8      0x329 RTOS/heap_2.o
- .debug_info    0x000019d1      0x2cd RTOS/list.o
- .debug_info    0x00001c9e      0x24e RTOS/port.o
- .debug_info    0x00001eec     0x19eb RTOS/tasks.o
+ .debug_info    0x00000cec      0x417 main.o
+ .debug_info    0x00001103      0x179 MCAL/DELAY/DELAY.o
+ .debug_info    0x0000127c      0x20e MCAL/DIO/DIO.o
+ .debug_info    0x0000148a      0x250 MCAL/EXT/EXT.o
+ .debug_info    0x000016da      0x329 RTOS/heap_2.o
+ .debug_info    0x00001a03      0x2cd RTOS/list.o
+ .debug_info    0x00001cd0      0x24e RTOS/port.o
+ .debug_info    0x00001f1e     0x19eb RTOS/tasks.o
 
-.debug_abbrev   0x00000000     0x1138
+.debug_abbrev   0x00000000     0x114e
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_abbrev  0x000004a3      0x11d HAL/LCD/LCD.o
  .debug_abbrev  0x000005c0       0xb0 HAL/LED/LED.o
  .debug_abbrev  0x00000670       0xbf HAL/SevenSeg/SevenSeg.o
- .debug_abbrev  0x0000072f      0x120 main.o
- .debug_abbrev  0x0000084f       0xa5 MCAL/DELAY/DELAY.o
- .debug_abbrev  0x000008f4       0xb0 MCAL/DIO/DIO.o
- .debug_abbrev  0x000009a4      0x114 MCAL/EXT/EXT.o
- .debug_abbrev  0x00000ab8      0x1a0 RTOS/heap_2.o
- .debug_abbrev  0x00000c58       0xf8 RTOS/list.o
- .debug_abbrev  0x00000d50      0x143 RTOS/port.o
- .debug_abbrev  0x00000e93      0x2a5 RTOS/tasks.o
+ .debug_abbrev  0x0000072f      0x136 main.o
+ .debug_abbrev  0x00000865       0xa5 MCAL/DELAY/DELAY.o
+ .debug_abbrev  0x0000090a       0xb0 MCAL/DIO/DIO.o
+ .debug_abbrev  0x000009ba      0x114 MCAL/EXT/EXT.o
+ .debug_abbrev  0x00000ace      0x1a0 RTOS/heap_2.o
+ .debug_abbrev  0x00000c6e       0xf8 RTOS/list.o
+ .debug_abbrev  0x00000d66      0x143 RTOS/port.o
+ .debug_abbrev  0x00000ea9      0x2a5 RTOS/tasks.o
 
-.debug_line     0x00000000     0x23de
+.debug_line     0x00000000     0x23fb
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000116      0x448 HAL/LCD/LCD.o
  .debug_line    0x0000055e       0xc5 HAL/LED/LED.o
  .debug_line    0x00000623      0x145 HAL/SevenSeg/SevenSeg.o
- .debug_line    0x00000768      0x189 main.o
- .debug_line    0x000008f1       0xf3 MCAL/DELAY/DELAY.o
- .debug_line    0x000009e4      0x1ce MCAL/DIO/DIO.o
- .debug_line    0x00000bb2      0x170 MCAL/EXT/EXT.o
- .debug_line    0x00000d22      0x29a RTOS/heap_2.o
- .debug_line    0x00000fbc      0x1ce RTOS/list.o
- .debug_line    0x0000118a      0x2a0 RTOS/port.o
- .debug_line    0x0000142a      0xfb4 RTOS/tasks.o
+ .debug_line    0x00000768      0x1a6 main.o
+ .debug_line    0x0000090e       0xf3 MCAL/DELAY/DELAY.o
+ .debug_line    0x00000a01      0x1ce MCAL/DIO/DIO.o
+ .debug_line    0x00000bcf      0x170 MCAL/EXT/EXT.o
+ .debug_line    0x00000d3f      0x29a RTOS/heap_2.o
+ .debug_line    0x00000fd9      0x1ce RTOS/list.o
+ .debug_line    0x000011a7      0x2a0 RTOS/port.o
+ .debug_line    0x00001447      0xfb4 RTOS/tasks.o
 
 .debug_frame    0x00000000      0xaf0
  *(.debug_frame)
@@ -1126,7 +1125,7 @@ END GROUP
  .debug_frame   0x00000528       0x84 RTOS/port.o
  .debug_frame   0x000005ac      0x544 RTOS/tasks.o
 
-.debug_str      0x00000000     0x141a
+.debug_str      0x00000000     0x1441
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x248 HAL/LCD/LCD.o
@@ -1135,36 +1134,36 @@ END GROUP
                                 0x247 (size before relaxing)
  .debug_str     0x000004f0       0x73 HAL/SevenSeg/SevenSeg.o
                                 0x21e (size before relaxing)
- .debug_str     0x00000563       0xcc main.o
-                                0x283 (size before relaxing)
- .debug_str     0x0000062f       0x48 MCAL/DELAY/DELAY.o
+ .debug_str     0x00000563       0xf3 main.o
+                                0x2aa (size before relaxing)
+ .debug_str     0x00000656       0x48 MCAL/DELAY/DELAY.o
                                 0x1fc (size before relaxing)
- .debug_str     0x00000677       0x90 MCAL/DIO/DIO.o
+ .debug_str     0x0000069e       0x90 MCAL/DIO/DIO.o
                                 0x2a9 (size before relaxing)
- .debug_str     0x00000707       0x9a MCAL/EXT/EXT.o
+ .debug_str     0x0000072e       0x9a MCAL/EXT/EXT.o
                                 0x283 (size before relaxing)
- .debug_str     0x000007a1      0x190 RTOS/heap_2.o
+ .debug_str     0x000007c8      0x190 RTOS/heap_2.o
                                 0x333 (size before relaxing)
- .debug_str     0x00000931      0x138 RTOS/list.o
+ .debug_str     0x00000958      0x138 RTOS/list.o
                                 0x2ea (size before relaxing)
- .debug_str     0x00000a69      0x11b RTOS/port.o
+ .debug_str     0x00000a90      0x11b RTOS/port.o
                                 0x2e3 (size before relaxing)
- .debug_str     0x00000b84      0x896 RTOS/tasks.o
+ .debug_str     0x00000bab      0x896 RTOS/tasks.o
                                 0xc83 (size before relaxing)
 
-.debug_loc      0x00000000     0x3340
+.debug_loc      0x00000000     0x335f
  *(.debug_loc)
  .debug_loc     0x00000000      0x335 HAL/LCD/LCD.o
  .debug_loc     0x00000335      0x132 HAL/LED/LED.o
  .debug_loc     0x00000467      0x344 HAL/SevenSeg/SevenSeg.o
- .debug_loc     0x000007ab       0x60 main.o
- .debug_loc     0x0000080b      0x15c MCAL/DELAY/DELAY.o
- .debug_loc     0x00000967      0x378 MCAL/DIO/DIO.o
- .debug_loc     0x00000cdf      0x32e MCAL/EXT/EXT.o
- .debug_loc     0x0000100d      0x2a8 RTOS/heap_2.o
- .debug_loc     0x000012b5      0x145 RTOS/list.o
- .debug_loc     0x000013fa      0x2a0 RTOS/port.o
- .debug_loc     0x0000169a     0x1ca6 RTOS/tasks.o
+ .debug_loc     0x000007ab       0x7f main.o
+ .debug_loc     0x0000082a      0x15c MCAL/DELAY/DELAY.o
+ .debug_loc     0x00000986      0x378 MCAL/DIO/DIO.o
+ .debug_loc     0x00000cfe      0x32e MCAL/EXT/EXT.o
+ .debug_loc     0x0000102c      0x2a8 RTOS/heap_2.o
+ .debug_loc     0x000012d4      0x145 RTOS/list.o
+ .debug_loc     0x00001419      0x2a0 RTOS/port.o
+ .debug_loc     0x000016b9     0x1ca6 RTOS/tasks.o
 
 .debug_macinfo
  *(.debug_macinfo)

@@ -17,8 +17,8 @@ main.d main.o: .././main.c .././std_macros.h .././Bit_math.h \
  .././RTOS/projdefs.h .././RTOS/portable.h \
  .././RTOS/deprecated_definitions.h .././RTOS/portmacro.h \
  .././RTOS/mpu_wrappers.h .././RTOS/task.h .././RTOS/list.h \
- .././HAL/LED/LED.h ../std_macros.h ../MCAL/DIO/DIO.h \
- .././HAL/SevenSeg/SevenSeg.h
+ .././RTOS/semphr.h .././RTOS/queue.h .././HAL/LED/LED.h ../std_macros.h \
+ ../MCAL/DIO/DIO.h .././HAL/SevenSeg/SevenSeg.h
 
 .././std_macros.h:
 
@@ -71,6 +71,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././RTOS/task.h:
 
 .././RTOS/list.h:
+
+.././RTOS/semphr.h:
+
+.././RTOS/queue.h:
 
 .././HAL/LED/LED.h:
 
