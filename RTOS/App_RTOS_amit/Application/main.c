@@ -52,7 +52,6 @@ void task3(void){
 	}
 }
 
-
 int main(void){
 	
 	LCD_init();
